@@ -1,0 +1,27 @@
+<%= form_for @tale do |f| %>
+  
+  <div>
+    <%= f.label :prompt %>
+    <%= f.text_area :prompt, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250 %>
+  </div>
+
+  <div>
+    <%= f.fields_for :lines do |line| %>
+      <%= line.label "Add a line" %>
+      <%= line.text_area :content, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250  %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.fields_for :tags_tales do |tag| %>
+     <%= tag.label :tags %>
+     <%= tag.text_field :tags %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %> 
+
