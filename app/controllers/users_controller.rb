@@ -8,11 +8,9 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save 
       session[:user_id] = user.id
-      flash[:notice] = "You're logged in!"
-      redirect_to root_path
+      redirect_to welcome_path, notice: "You're logged in!"
     else 
-      flash[:notice] = "Dat ish was invalid, yo"
-      redirect_to root_path
+      redirect_to signup_path, notice: "Dat ish was invalid, yo"
     end
   end
 
