@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save 
-      session[:user_id] = user.id
-      redirect_to welcome_path, notice: "You're logged in!"
+      redirect_to welcome_path
     else 
       redirect_to signup_path, notice: "Dat ish was invalid, yo"
     end
