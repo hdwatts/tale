@@ -28,14 +28,14 @@ end
   t = Tale.create(prompt: Faker::Hipster.paragraph(rand(3)), owner: user)
   t.save!
   content = Faker::Hipster.paragraph until content && content.length <= 250
-  first_line = Line.create(user: user, tale: t, content: content)
+  first_line = Line.create(user: user, tale: t, content: content, done: true)
 end
 
 Tale.all.each do |tale|
   rand(1..5).times do
     user = User.all.sample until user && user != tale.lines.last.user
     content = Faker::Hipster.paragraph until content && content.length <= 250
-    Line.create(user: user, tale: tale, content: content)
+    Line.create(user: user, tale: tale, content: content, done: true)
   end
 end
 
