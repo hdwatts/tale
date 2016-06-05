@@ -7,4 +7,5 @@ class Tale < ApplicationRecord
 
   accepts_nested_attributes_for :lines
   accepts_nested_attributes_for :tags
+
 end

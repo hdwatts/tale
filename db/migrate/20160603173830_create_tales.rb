@@ -3,7 +3,7 @@ class CreateTales < ActiveRecord::Migration[5.0]
     create_table :tales do |t|
       t.string :prompt
       t.integer :owner_id, foreign_key: true
-
+      t.boolean :open, default: true
       t.timestamps
     end
   end

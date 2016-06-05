@@ -40,8 +40,9 @@ ActiveRecord::Schema.define(version: 20160603192830) do
   create_table "tales", force: :cascade do |t|
     t.string   "prompt"
     t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "open",       default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|

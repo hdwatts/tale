@@ -10,15 +10,19 @@ dean = User.create(first_name: "Dean", last_name: "Watts", username: "hdwatts", 
 alex = User.create(first_name: "Alex", last_name: "Martin", username: "asmartin", email: "alex@tales.com", password: "password1" )
 eve = User.create(first_name: "Eve", last_name: "Essex", username: "eessex", email: "eve@tales.com", password: "password1" )
 
-5.times do
+
+until User.all.count == 8 do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  username = Faker::Hipster.word until username && username.length > 6
+  username = Faker::Internet.user_name
   email = first_name.downcase + "@flatironschool.com"
-  password = Faker::Hipster.word until password && password.length > 6
-  user = User.create!(first_name: first_name, username: username, last_name: last_name, email: email, password: password) unless User.all.any?{|user| user.username == username}
-  [rand(6).years, rand(365).days, rand(24).hours, rand(60).minutes, rand(60).seconds].each{|time| user.created_at -= time}
-  user.save!
+  password = Faker::Internet.password(6)
+  u = User.create(first_name: first_name, username: username, last_name: last_name, email: email, password: password)
+  puts "#{User.all.count} #{first_name} #{last_name} #{username} #{email} #{password} #{u.valid?}"
+  if u.valid?
+    [rand(6).years, rand(365).days, rand(24).hours, rand(60).minutes, rand(60).seconds].each{|time| u.created_at -= time}
+    u.save
+  end
 end
 
 5.times do
