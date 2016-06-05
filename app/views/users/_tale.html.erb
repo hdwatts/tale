@@ -1,0 +1,8 @@
+<% unless owned %>
+<b>Owner:</b> <%= link_to tale.owner.username, tale.owner %>
+<% end %>
+<b>Prompt:</b> <p> <%= tale.prompt %></p>
+
+<b>First Line:</b> <p><%= tale.lines.first.content %></p>
+<%= link_to 'View More', tale %>
+<br>
