@@ -1,1 +1,16 @@
-This is <%= @user.first_name %>'s page
+<h1>This is <%= @user.username %>'s page!</h1>
+
+
+<%= render 'user' %>
+
+
+<h2> Tales started by <%= @user.username %> </h2>
+<% @user.tales_owned.each do |tale| %>
+  <%= render 'tale', tale: tale, owned: true %>
+<% end %>
+
+<h2> Tales <%= @user.username %> has contributed to </h2>
+<% @user.tales_contributed.each do |tale| %>
+  <%= render 'tale', tale: tale, owned: false %>
+<% end %>
+

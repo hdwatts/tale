@@ -1,20 +1,16 @@
 class UsersController < ApplicationController
 
-
-  def welcome
-  end
-
   def create
-    user = User.new(user_params)
-    if user.save 
-      redirect_to welcome_path
+    @user = User.new(user_params)
+    if @user.save 
+      redirect_to @user
     else 
       redirect_to signup_path, notice: "Dat ish was invalid, yo"
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = UserDecorator.new(User.find(params[:id]))
   end
 
   
