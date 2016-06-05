@@ -39,15 +39,15 @@ ActiveRecord::Schema.define(version: 20160603192830) do
 
   create_table "tales", force: :cascade do |t|
     t.string   "prompt"
-    t.integer  "user_id"
+    t.integer  "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tales_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "username"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
@@ -56,5 +56,4 @@ ActiveRecord::Schema.define(version: 20160603192830) do
 
   add_foreign_key "lines", "tales"
   add_foreign_key "lines", "users"
-  add_foreign_key "tales", "users"
 end

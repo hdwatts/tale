@@ -1,6 +1,4 @@
 class TalesController < ApplicationController
-  def show
-  end
 
   def new
     @tale = Tale.new
