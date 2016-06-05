@@ -11,4 +11,5 @@ class User < ApplicationRecord
   # def valid_email
   #   errors.add(:email, "is invalid") unless 
   # end
+
 end
