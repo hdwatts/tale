@@ -30,8 +30,8 @@ end
 end
 
 Tale.all.each do |tale|
-  (rand(4)+1).times do
-    user = User.all.sample until user != Tale.first.lines.last
+  (rand(1..5).times do
+    user = User.all.sample until user && user != tale.lines.last.user
     content = Faker::Hipster.paragraph until content && content.length <= 250
     Line.create(user: user, tale: tale, content: content)
   end
@@ -39,19 +39,9 @@ end
 
 10.times do
   tag = Tag.create(name: Faker::Hipster.word)
-  (rand(Tale.all.size) + 1).times do
+  (rand(1..Tale.all.size)).times do
     tale = Tale.all.sample until tale && !tag.tales.include?(tale)
     TagsTale.create(tag: tag, tale: tale )
     tale.save
   end
 end
-
-# User.all.each{|user| User.all.shuffle.first(rand(10)).each{|followee| user.follow(followee)}; user.save}
-
-# Bar.all.each do |bar|
-#  User.all.shuffle.first(rand(11)).each do |user|
-#    rating = rand(5) + 1
-#    Review.create(bar: bar, user: user, rating: rating, content: Faker::Hipster.paragraph(rand(5) + 1))
-#  end
-# end
-# User.all.each {|user| 150.times {Like.create(user: user, review: Review.find(rand(1..10000)))}}
