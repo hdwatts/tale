@@ -16,8 +16,5 @@ class User < ApplicationRecord
   def minimum_six_character_password
     errors.add(:password, "is invalid") if password.length < 6
   end
-
- 
-
-
+  
 end
