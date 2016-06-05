@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20160603192830) do
     t.integer  "user_id"
     t.integer  "tale_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "done",       default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["tale_id"], name: "index_lines_on_tale_id", using: :btree
     t.index ["user_id"], name: "index_lines_on_user_id", using: :btree
   end

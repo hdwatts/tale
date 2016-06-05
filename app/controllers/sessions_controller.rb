@@ -12,5 +12,4 @@ class SessionsController < ApplicationController
       redirect_to root, notice: "Invalid"
     end
   end
-
 end

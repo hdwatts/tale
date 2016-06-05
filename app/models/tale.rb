@@ -8,4 +8,9 @@ class Tale < ApplicationRecord
   accepts_nested_attributes_for :lines
   accepts_nested_attributes_for :tags
 
+
+
+  def is_current_line_user?(user)
+    return self.lines.last.user == user && self.lines.last.done == 0
+  end
 end
