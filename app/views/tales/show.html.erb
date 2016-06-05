@@ -9,10 +9,29 @@
     min-height: 1em;
   }
 </style>
+
+<% if @tale.is_current_line_user?(@current_user) %>
+  <script>
+    $(function(){
+      $('#newline').on("keyup", function(){
+        var content = $(this).text();
+        $.ajax({
+          method: "POST",
+          url: "/updateline",
+          data: {id: "1", content: content}
+        });
+      });
+    });
+  </script>
+<% end %>
+
 <div id="tale">
   <div class="line">
     Google docs, dean edition
   </div>
-  <div class="line" id="newline" contenteditable="true">
+
+
+
+  <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> >
   </div>
 </div>

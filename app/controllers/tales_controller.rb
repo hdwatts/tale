@@ -16,6 +16,10 @@ class TalesController < ApplicationController
     end
   end
 
+  def show
+    @tale = Tale.find(params[:id])
+  end
+
 private
   
   def tale_params
