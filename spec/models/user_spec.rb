@@ -1,0 +1,54 @@
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  context 'when all the fields are normal' do
+    let (:user) { User.new(first_name: "R", last_name: "Spec", username: "rspec", email: "r@spec.com", password: "password", password_confirmation: "password") }
+
+    it 'should be valid' do
+      expect(user.valid?).to be_truthy
+    end
+
+    it 'should save' do
+      expect(user.save).to be_truthy
+    end
+  end
+  context 'when missing a field' do
+    let (:user) { User.new(first_name: "Madonna", last_name: nil, username: "madonna", password: "madonna", password_confirmation: "madonna") }
+    
+    it 'should not be valid' do
+      expect(user.valid?).to be_falsey
+    end
+
+    it 'should not save' do
+      expect(user.save).to be_falsey
+    end
+  end
+
+  context 'when the password and password confirmation are different' do
+    let (:user) { User.new(first_name: "R", last_name: "Spec", username: "rspec", email: "r@spec.com", password: "password", password_confirmation: "sassword") }
+
+    it 'should not be valid' do
+      expect(user.valid?).to be_falsey
+    end
+
+    it 'should not save' do
+      expect(user.save).to be_falsey
+    end
+  end
+
+  context 'when an email or username is not unique' do
+    before { User.create!(first_name: "Original", last_name: "User", username: "originaluser", email: "originaluser@originaluser.com", password: "password", password_confirmation: "password") }
+    let(:user_with_same_email) { User.new(first_name: "Copy", last_name: "Cat", username: "copycat", email: "originaluser@originaluser.com", password: "password", password_confirmation: "password") }
+    let(:user_with_same_username) { User.new(first_name: "Copy", last_name: "Cat", username: "originaluser", email: "originaluser@originaluser.com", password: "password", password_confirmation: "password") }
+
+    it 'should not be valid' do
+      expect(user_with_same_email.valid?).to be_falsey
+      expect(user_with_same_username.valid?).to be_falsey
+    end
+
+    it 'should not save' do
+      expect(user_with_same_email.save).to be_falsey
+      expect(user_with_same_username.save).to be_falsey
+    end
+  end
+end
