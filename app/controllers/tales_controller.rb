@@ -17,7 +17,7 @@ class TalesController < ApplicationController
   end
 
   def show
-    @tale = Tale.find(params[:id])
+    @tale = TaleDecorator.new(Tale.find(params[:id]))
   end
 
 private

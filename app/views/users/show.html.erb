@@ -6,11 +6,11 @@
 
 <h2> Tales started by <%= @user.username %> </h2>
 <% @user.tales_owned.each do |tale| %>
-  <%= render 'tale', tale: tale, owned: true %>
+  <%= render 'tale', tale: tale, owned_by_user: true %>
 <% end %>
 
 <h2> Tales <%= @user.username %> has contributed to </h2>
 <% @user.tales_contributed.each do |tale| %>
-  <%= render 'tale', tale: tale, owned: false %>
+  <%= render 'tale', tale: tale, owned_by_user: false %>
 <% end %>
 
