@@ -20,6 +20,10 @@ class TalesController < ApplicationController
     @tale = TaleDecorator.new(Tale.find(params[:id]))
   end
 
+  def index
+    @tales = Tale.all
+  end
+
 private
   
   def tale_params
