@@ -51,4 +51,23 @@ RSpec.describe User, type: :model do
       expect(user_with_same_username.save).to be_falsey
     end
   end
+
+  context 'when created' do
+    before do
+      @user = User.create!(first_name: "R", last_name: "Spec", username: "rspec", email: "r@spec.com", password: "password", password_confirmation: "password")
+      @owned_tale = Tale.create!(owner: @user, prompt: "This'll be a great tale.")
+      Line.create(tale: @owned_tale, user: @user, content: "Blahblahblahblahblahblahblah.")
+      @other_user = User.create!(first_name: "R", last_name: "Spec", username: "rspec2", email: "r2@spec.com", password: "password", password_confirmation: "password")
+      @unowned_tale = Tale.create!(owner: @other_user, prompt: "This'll be a great tale.")
+      Line.create(tale: @unowned_tale, user: @user, content: "Blahblahblahblahblahblahblah.")
+    end
+
+    it 'should know which tales it created' do
+      expect(@user.tales_owned[0]).to eq(@owned_tale)
+    end
+
+    it 'should know which tales it contributed to' do
+      expect(@user.tales_contributed[0]).to eq(@unowned_tale)
+    end
+  end
 end

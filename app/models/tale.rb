@@ -14,11 +14,11 @@ class Tale < ApplicationRecord
     return self.lines.last.user == user && self.lines.last.done == 0
   end
 
-  def open_tales
-    Tale.where(open: true)
+  def self.open_tales
+    where(open: true)
   end
 
-  def closed_tales
-    Tale.all - open_tales
+  def self.closed_tales
+    all - open_tales
   end
 end
