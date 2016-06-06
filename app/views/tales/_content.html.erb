@@ -1,4 +1,4 @@
 <% lines.each do |line| %>
   <p> <%= line.content %> </p>
-  (<b>Written By:</b> <%= link_to line.user.username, line.user %>)
+  (<em>Written By: <%= link_to line.user.username, line.user %></em>)
 <% end %>

@@ -4,7 +4,6 @@ class Tale < ApplicationRecord
   has_many :users, through: :lines
   has_many :tags_tales
   has_many :tags, through: :tags_tales
-
   accepts_nested_attributes_for :lines
   accepts_nested_attributes_for :tags
 
@@ -13,4 +12,13 @@ class Tale < ApplicationRecord
   def is_current_line_user?(user)
     return self.lines.last.user == user && self.lines.last.done == 0
   end
+
+  def self.open_tales
+    where(open: true)
+  end
+
+  def self.closed_tales
+    where(open: false)
+  end
+
 end
