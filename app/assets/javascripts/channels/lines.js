@@ -55,7 +55,7 @@ $(function(){
     $.ajax({
       method: "POST",
       url: "/updateline",
-      data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>", content: content}
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content}
     });
   });
 
@@ -63,7 +63,7 @@ $(function(){
     $.ajax({
       method: "POST",
       url: "/createline",
-      data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>"}
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val()}
     })
   });
 
@@ -73,7 +73,7 @@ $(function(){
     $.ajax({
       method: "POST",
       url: "/saveline",
-      data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>", content: content, done: true}
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content, done: true}
     })
   });
 
@@ -82,7 +82,7 @@ $(function(){
     $.ajax({
       method: "POST",
       url: "/saveline",
-      data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>", content: content, done: true, closed: true}
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content, done: true, closed: true}
     })
   })
 });
