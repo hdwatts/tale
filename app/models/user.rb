@@ -25,4 +25,7 @@ class User < ApplicationRecord
     tales - tales_owned
   end
 
+  def html_link_to_user
+    "<a href='/users/#{id}''>asmartin</a>".html_safe
+  end
 end
