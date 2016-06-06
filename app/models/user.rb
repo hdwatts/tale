@@ -10,11 +10,11 @@ class User < ApplicationRecord
   validate :minimum_six_character_password
 
   def valid_email
-    errors.add(:email, "is invalid") if email !~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+    errors.add(:email, "is not a valid email") if email !~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   end
 
   def minimum_six_character_password
-    errors.add(:password, "is invalid") if password && password.length < 6
+    errors.add(:password, "must be at least 6 characters") if password && password.length < 6
   end
 
   def tales_owned
