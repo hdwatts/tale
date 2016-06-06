@@ -52,6 +52,7 @@ RSpec.describe User, type: :model do
     end
   end
 
+
   context 'with an email that is not an email' do
     let (:user) { User.new(first_name: "R", last_name: "Spec", username: "rspec", email: "thisisnotanemail", password: "password", password_confirmation: "password") }
 
@@ -91,8 +92,9 @@ RSpec.describe User, type: :model do
     end
 
     it 'should know which tales it contributed to' do
-       expect(@user.tales_contributed[0]).to eq(@unowned_tale)
+      expect(@user.tales_contributed[0]).to eq(@unowned_tale)
     end
+
   end
 
 end

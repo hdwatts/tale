@@ -28,4 +28,5 @@ class User < ApplicationRecord
   def html_link_to_user
     "<a href='/users/#{id}''>#{username}</a>".html_safe
   end
+  
 end
