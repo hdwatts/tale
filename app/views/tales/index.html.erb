@@ -1,3 +1,14 @@
-<%= @tales.each do |tale| %>
-
+<h2> Open Tales </h2>
+<ul>
+<% Tale.open_tales.each do |tale| %>
+  <li><%= link_to tale.prompt, tale %></li>
 <% end %>
+</ul>
+
+
+<h2> Closed Tales </h2>
+<ul>
+<% Tale.closed_tales.each do |tale| %>
+  <li><%= link_to tale.prompt, tale %></li>
+<% end %>
+</ul>

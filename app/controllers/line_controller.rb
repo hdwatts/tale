@@ -2,9 +2,7 @@ class LineController < ApplicationController
   def create
     tale = Tale.find(params[:tale])
     
-    if @current_user.id != params[:id].to_i ||
-      !tale.awaiting_new_line?
-      
+    if @current_user.id != params[:id].to_i || !tale.awaiting_new_line?
       head :forbidden
     else
       line = Line.create(tale: tale, user: @current_user)

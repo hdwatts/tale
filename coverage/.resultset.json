@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/eveessex/Development/projects/tale/app/decorators/user_decorator.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/decorators/user_decorator.rb": [
         1,
         null,
         1,
@@ -15,7 +15,7 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/models/tale.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/models/tale.rb": [
         1,
         1,
         1,
@@ -28,11 +28,11 @@
         null,
         null,
         1,
-        6,
+        7,
         null,
         null,
         1,
-        8,
+        9,
         null,
         null,
         1,
@@ -45,12 +45,12 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/models/application_record.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/models/user.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/models/user.rb": [
         1,
         1,
         1,
@@ -84,15 +84,20 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/models/line.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/models/line.rb": [
         1,
         1,
         1,
         null,
         1,
+        1,
+        null,
+        1,
+        12,
+        null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/controllers/sessions_controller.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -109,7 +114,7 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/controllers/application_controller.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -122,7 +127,7 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/controllers/users_controller.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -152,7 +157,7 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/controllers/tales_controller.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/controllers/tales_controller.rb": [
         1,
         null,
         1,
@@ -188,6 +193,14 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
         null,
         1,
         0,
@@ -199,7 +212,7 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/decorators/tale_decorator.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/decorators/tale_decorator.rb": [
         1,
         null,
         1,
@@ -208,19 +221,19 @@
         null,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/models/tags_tale.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/models/tags_tale.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/eveessex/Development/projects/tale/app/models/tag.rb": [
+      "/Users/flatironschool/Documents/alex/tale/app/models/tag.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1465245760
+    "timestamp": 1465248362
   }
 }
