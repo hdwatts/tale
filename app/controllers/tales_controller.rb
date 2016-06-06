@@ -7,9 +7,7 @@ class TalesController < ApplicationController
   end
 
   def create
-    @tale = Tale.new(tale_params)
-    @tale.lines.first.user_id = current_user.id 
-    @tale.owner_id = current_user.id
+    @tale = TaleCreator.create_tale(tale_params, current_user)
     if @tale.save!
       redirect_to @tale
     else
