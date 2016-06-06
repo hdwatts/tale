@@ -3,12 +3,14 @@ class TalesController < ApplicationController
   def new
     @tale = Tale.new
     @line = @tale.lines.build
-    @tag = @tale.tags.build
+    @tags = Tag.new
   end
 
   def create
     @tale = TaleCreator.create_tale(tale_params, current_user)
-    if @tale.save!
+    if @tale.save
+      the_tale = @tale
+      @tag = TagCreator.create_tags(tag_params, the_tale)
       redirect_to @tale
     else
       @tale.errors.full_messages.each { |error| "#{error}" }
@@ -27,7 +29,11 @@ class TalesController < ApplicationController
 private
   
   def tale_params
-    params.require(:tale).permit(:prompt, :owner_id, lines_attributes: [:id, :content], tags_attributes: [:name])
+    params.require(:tale).permit(:prompt, :owner_id, lines_attributes: [:id, :content])
+  end
+
+  def tag_params
+   params[:tale][:tag][:name].split(",")
   end
 
 end

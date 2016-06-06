@@ -77,6 +77,10 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  #ACTION CABLE CONFIG
+  config.web_socket_server_url = "wss://fathomless-taiga-18220.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://fathomless-taiga-18220.herokuapp.com', 'http://fathomless-taiga-18220.herokuapp.com']
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
