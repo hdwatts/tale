@@ -26,6 +26,6 @@ class User < ApplicationRecord
   end
 
   def html_link_to_user
-    "<a href='/users/#{id}''>asmartin</a>".html_safe
+    "<a href='/users/#{id}''>#{username}</a>".html_safe
   end
 end
