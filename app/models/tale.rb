@@ -1,10 +1,9 @@
 class Tale < ApplicationRecord
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
-  has_many :lines
+  has_many :lines, inverse_of: :tale
   has_many :users, through: :lines
   has_many :tags_tales
   has_many :tags, through: :tags_tales
-
   accepts_nested_attributes_for :lines
   accepts_nested_attributes_for :tags
 
@@ -17,4 +16,13 @@ class Tale < ApplicationRecord
   def awaiting_new_line?
     return self.lines.last.done?
   end
+
+  def self.open_tales
+    where(open: true)
+  end
+
+  def self.closed_tales
+    where(open: false)
+  end
+
 end

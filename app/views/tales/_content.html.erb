@@ -2,7 +2,7 @@
   <% lines.each do |line| %>
     <% if line != lines.last || @tale.awaiting_new_line? %>
       <p> <%= line.content %> </p>
-      (<b>Written By:</b> <%= link_to line.user.username, line.user %>)
+      (<b>Written By:</b> <%= line.user.html_link_to_user %>)
     <% end %>
   <% end %>
 </div>

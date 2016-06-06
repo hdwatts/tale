@@ -6,16 +6,16 @@
   </div>
 
   <div>
-    <%= f.fields_for :lines do |line| %>
-      <%= line.label "Add a line" %>
-      <%= line.text_area :content, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250  %>
+    <%= f.fields_for :lines do |ff| %>
+      <%= ff.label "Add a line" %>
+      <%= ff.text_area :content, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250  %>
     <% end %>
   </div>
 
   <div>
-    <%= f.fields_for :tags_tales do |tag| %>
-     <%= tag.label :tags %>
-     <%= tag.text_field :tags %>
+    <%= f.fields_for :tags do |ff| %>
+     <%= ff.label :tags %>
+     <%= ff.text_field :name %>
     <% end %>
   </div>
 

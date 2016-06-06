@@ -50,7 +50,7 @@ class LineController < ApplicationController
           content: line.content,
           user_id: line.user.id,
           tale_id: tale.id,
-          user_link: "#{link_to(line.user.username, line.user)}",
+          user_link: line.user.html_link_to_user,
           done: line.done
 
         head :ok

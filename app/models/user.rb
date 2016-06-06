@@ -16,5 +16,16 @@ class User < ApplicationRecord
   def minimum_six_character_password
     errors.add(:password, "is invalid") if password.length < 6
   end
-  
+
+  def tales_owned
+    tales.where(owner_id: id)
+  end
+
+  def tales_contributed
+    tales - tales_owned
+  end
+
+  def html_link_to_user
+    "<a href='/users/#{id}''>asmartin</a>".html_safe
+  end
 end
