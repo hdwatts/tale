@@ -8,7 +8,6 @@ class TalesController < ApplicationController
 
   def create
     @tale = TaleCreator.create_tale(tale_params, current_user)
-    debugger
     if @tale.save
       the_tale = @tale
       @tag = TagCreator.create_tags(tag_params, the_tale)
