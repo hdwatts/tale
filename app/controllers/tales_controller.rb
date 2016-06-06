@@ -32,6 +32,14 @@ class TalesController < ApplicationController
     @tales = Tale.all
   end
 
+  def destroy
+    @tale = Tale.find(params[:id])
+    if @tale.owner == current_user
+      @tale.destroy
+      redirect_to root_path
+    end
+  end
+
 private
   
   def tale_params
