@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   def minimum_six_character_password
-    errors.add(:password, "is invalid") if password.length < 6
+    errors.add(:password, "is invalid") if password && password.length < 6
   end
 
   def tales_owned
