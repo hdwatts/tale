@@ -1,4 +1,22 @@
-edit.html.erb
+<h1>Edit your Tale</h1>
 
+<%= form_for @tale do |f| %>
+  
+  <div>
+    <%= f.label :prompt %>
+    <%= f.text_area :prompt, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250 %>
+  </div>
 
-<%= render 'form' %>
+  <div>
+    <%= f.fields_for @tags do |ff| %>
+     <%= ff.label :tags %>
+     <%= ff.text_field :name %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %> 
+

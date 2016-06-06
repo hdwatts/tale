@@ -3,6 +3,7 @@ Capybara.javascript_driver = :webkit
 RSpec.configure do |config|
   config.default_formatter = 'doc'
   config.include Capybara::DSL
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
