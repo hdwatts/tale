@@ -2,7 +2,9 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
 
   received: function(data) {
     if ( data.tale_id == $('#tale_id').val() ) {
-
+      if ( data.tale_open == false ) {
+        location.reload()
+      }
       if ( data.user_id == $('#curr_user_id').val() ) {
         if ( $('#newline').attr("contenteditable") != "true" ) {
           $('#newline').attr("contenteditable", "true");
