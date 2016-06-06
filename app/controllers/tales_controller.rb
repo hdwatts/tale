@@ -8,6 +8,7 @@ class TalesController < ApplicationController
 
   def create
     @tale = TaleCreator.create_tale(tale_params, current_user)
+    debugger
     if @tale.save
       the_tale = @tale
       @tag = TagCreator.create_tags(tag_params, the_tale)
@@ -22,8 +23,21 @@ class TalesController < ApplicationController
     @tale = TaleDecorator.new(Tale.find(params[:id]))
   end
 
+  def edit
+    @tale = Tale.find(params[:id])
+    @tags = @tale.tags
+  end
+
   def index
     @tales = Tale.all
+  end
+
+  def destroy
+    @tale = Tale.find(params[:id])
+    if @tale.owner == current_user
+      @tale.destroy
+      redirect_to root_path
+    end
   end
 
 private

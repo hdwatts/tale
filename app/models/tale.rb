@@ -1,8 +1,8 @@
 class Tale < ApplicationRecord
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
-  has_many :lines, inverse_of: :tale
+  has_many :lines, inverse_of: :tale, dependent: :destroy
   has_many :users, through: :lines
-  has_many :tags_tales
+  has_many :tags_tales, dependent: :destroy
   has_many :tags, through: :tags_tales
   accepts_nested_attributes_for :lines
   accepts_nested_attributes_for :tags
