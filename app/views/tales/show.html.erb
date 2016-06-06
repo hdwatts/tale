@@ -51,9 +51,6 @@
 <input type="hidden" id="tale_id" value="<%= @tale.id %>">
 
 <div id="tale">
-  <div class="line">
-    Google docs, dean edition
-  </div>
 
   <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> >
   </div>
