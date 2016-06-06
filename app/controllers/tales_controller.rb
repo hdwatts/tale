@@ -8,6 +8,7 @@ class TalesController < ApplicationController
 
   def create
     @tale = TaleCreator.create_tale(tale_params, current_user)
+    debugger
     if @tale.save
       the_tale = @tale
       @tag = TagCreator.create_tags(tag_params, the_tale)
@@ -20,6 +21,11 @@ class TalesController < ApplicationController
 
   def show
     @tale = TaleDecorator.new(Tale.find(params[:id]))
+  end
+
+  def edit
+    @tale = Tale.find(params[:id])
+    @tags = @tale.tags
   end
 
   def index
