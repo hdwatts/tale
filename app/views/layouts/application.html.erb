@@ -9,9 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 <!--   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
   </head>
+  <%= render 'layouts/navbar' %>
 
   <body>
+    <main>
       <%= yield %>
+    </main>
   </body>
 </html>
 
