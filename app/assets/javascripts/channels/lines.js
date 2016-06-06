@@ -11,6 +11,9 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
         }
         if ( data.hide ) {
           $("#save").show();
+          if ( data.owner_id == $('#curr_user_id').val()) {
+            $("#close").show();
+          }
         }
       } else {
 
@@ -27,6 +30,7 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
         $('#newline').attr("contenteditable", "false");
         $('#newline').text("")
         $("#save").hide();
+        $("#close").hide();
 
         if ( data.user_id != $('#curr_user_id').val() ) {
           $("#participate").show();

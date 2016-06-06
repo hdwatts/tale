@@ -71,9 +71,10 @@
     <% end %>
     <% if !@tale.is_current_line_user?(@current_user) %>
       <% save_css = "display:none;" %>
-      <% unless @tale.owner == @current_user %>
+    <% end %>
+
+    <% if @tale.owner != @current_user || !@tale.is_current_line_user?(@current_user) %>
         <% close_css = "display:none;" %>
-      <% end %>
     <% end %>
 
     <div id="participate" style="<%= participate_css %>">

@@ -12,7 +12,8 @@ class LineController < ApplicationController
         content: line.content,
         user_id: line.user.id,
         tale_id: tale.id,
-        hide: true
+        hide: true,
+        owner_id: tale.owner.id
       head :ok
     end
   end
@@ -41,7 +42,7 @@ class LineController < ApplicationController
 
     if @current_user.id != params[:id].to_i ||
       !tale.is_current_line_user?(@current_user)
-
+      puts "#{@current_user.id} - #{params[:id]} - #{!tale.is_current_line_user?(@current_user)}"
       head :forbidden
     else
       line.update(strong_params)
