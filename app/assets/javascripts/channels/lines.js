@@ -2,13 +2,18 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
 
   received: function(data) {
     if ( data.tale_id == $('#tale_id').val() ) {
-
+      if ( data.tale_open == false ) {
+        location.reload()
+      }
       if ( data.user_id == $('#curr_user_id').val() ) {
         if ( $('#newline').attr("contenteditable") != "true" ) {
           $('#newline').attr("contenteditable", "true");
         }
         if ( data.hide ) {
           $("#save").show();
+          if ( data.owner_id == $('#curr_user_id').val()) {
+            $("#close").show();
+          }
         }
       } else {
 
@@ -25,6 +30,7 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
         $('#newline').attr("contenteditable", "false");
         $('#newline').text("")
         $("#save").hide();
+        $("#close").hide();
 
         if ( data.user_id != $('#curr_user_id').val() ) {
           $("#participate").show();
