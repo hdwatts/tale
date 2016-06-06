@@ -1,10 +1,16 @@
-<nav id="main-menu">
-  <h1><%= link_to "Tale", root_path %></h1>
-  <% if @current_user.nil? %>
-  <%= link_to "Sign In", new_session_path %>
-  <%= link_to "Sign Up", signup_path %>
-  <% else %>
-  <%= link_to "My Profile", user_path(@current_user) %>
-  <%= link_to "New Tale", new_tale_path %>
-  <% end %>
-</nav>
+<header>
+  <div id="content">
+    <div id="brand">
+      <%= link_to "Tale", root_path %>
+    </div>
+    <nav id="main-menu">
+      <% if @current_user.nil? %>
+      <%= link_to "Sign In", new_session_path %>
+      <%= link_to "Sign Up", signup_path %>
+      <% else %>
+      <%= link_to "My Profile", user_path(@current_user) %>
+      <%= link_to "New Tale", new_tale_path %>
+      <% end %>
+    </nav>
+  </div>  
+</header>
