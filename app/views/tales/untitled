@@ -1,0 +1,2 @@
+class TaleDecorator < SimpleDelegator
+end
