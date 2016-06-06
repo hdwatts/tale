@@ -18,12 +18,24 @@
         $.ajax({
           method: "POST",
           url: "/updateline",
-          data: {id: "1", content: content}
+          data: {id: "<%= @current_user.id %>", content: content}
         });
       });
     });
   </script>
 <% end %>
+
+<script>
+  $(function(){
+    $("#participate_btn").on("click", function(e){
+      $.ajax({
+        method: "POST",
+        url: "/createline",
+        data: {id: "<%= @current_user.id %>", tale: "<%= @tale.id %>"}
+      })
+    });
+  })
+</script>
 
 <div id="tale">
   <div class="line">
@@ -35,3 +47,6 @@
   <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> >
   </div>
 </div>
+<% if @tale.awaiting_new_line? %>
+  <button id="participate_btn">Participate in this Story</button>
+<% end %>
