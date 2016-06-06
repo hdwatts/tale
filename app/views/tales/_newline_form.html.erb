@@ -1,0 +1,37 @@
+<% if @tale.open? %>
+
+  <input type="hidden" id="curr_user_id" value="<%= session[:user_id] %>">
+  <input type="hidden" id="tale_id" value="<%= @tale.id %>">
+  <% if @tale.owner == @current_user %>
+    <div id="edit-buttons">
+      <%= link_to "Delete", tale_path(@tale), method: :delete, class: 'btn'%>
+    </div>
+  <% end %>
+
+  <div id="tale">
+    <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> >
+    </div>
+    <% unless @tale.awaiting_new_line? && @current_user && @current_user != @tale.lines.last.user %>
+      <% participate_css = "display:none;" %>
+    <% end %>
+    <% if !@tale.is_current_line_user?(@current_user) %>
+      <% save_css = "display:none;" %>
+    <% end %>
+
+    <% if @tale.owner != @current_user || !@tale.is_current_line_user?(@current_user) %>
+      <% close_css = "display:none;" %>
+    <% end %>
+
+    <div id="participate" style="<%= participate_css %>">
+      <button id="participate_btn" >Participate in this Story</button>
+    </div>
+
+    <div id="save" style="<%= save_css %>">
+      <button id="save_btn">Add to the Story</button>
+    </div>
+
+    <div id="close" style="<%= close_css %>">
+      <button id="close_btn">End Story</button>
+    </div>
+  </div>
+<% end %>

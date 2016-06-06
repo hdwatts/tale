@@ -47,3 +47,42 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
     return ""+data.content;
   }
 });
+
+
+$(function(){
+  $('#newline').on("keyup", function(){
+    var content = $(this).text();
+    $.ajax({
+      method: "POST",
+      url: "/updateline",
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content}
+    });
+  });
+
+  $("#participate_btn").on("click", function(e){
+    $.ajax({
+      method: "POST",
+      url: "/createline",
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val()}
+    })
+  });
+
+  $("#save_btn").on("click", function(e){
+    var content = $('#newline').text();
+
+    $.ajax({
+      method: "POST",
+      url: "/saveline",
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content, done: true}
+    })
+  });
+
+  $("#close_btn").on("click", function(e){
+    var content = $('#newline').text();
+    $.ajax({
+      method: "POST",
+      url: "/saveline",
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content, done: true, closed: true}
+    })
+  })
+});

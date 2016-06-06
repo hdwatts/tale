@@ -20,3 +20,8 @@
   width: 100%;
   margin: 0 auto;
  }
+#newline {
+  width:100%;
+  background-color: lightgrey;
+  min-height: 1em;
+}
