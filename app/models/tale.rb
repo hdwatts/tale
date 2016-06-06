@@ -11,7 +11,7 @@ class Tale < ApplicationRecord
 
 
   def is_current_line_user?(user)
-    return self.lines.last.user == user && !self.lines.last.done?
+    return self.lines.last.user == user && !awaiting_new_line?
   end
 
   def awaiting_new_line?

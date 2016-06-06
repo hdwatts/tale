@@ -16,4 +16,5 @@ class UserDecorator < SimpleDelegator
     tales - tales_owned
   end
 
+
 end

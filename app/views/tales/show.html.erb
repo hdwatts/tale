@@ -15,43 +15,61 @@
   }
 </style>
 
-<% if @tale.is_current_line_user?(@current_user) %>
-  <script>
-    $(function(){
-      $('#newline').on("keyup", function(){
-        var content = $(this).text();
-        $.ajax({
-          method: "POST",
-          url: "/updateline",
-          data: {id: "<%= @current_user.id %>", content: content}
-        });
-      });
-    });
-  </script>
-<% end %>
-
 <script>
   $(function(){
+    $('#newline').on("keyup", function(){
+      var content = $(this).text();
+      $.ajax({
+        method: "POST",
+        url: "/updateline",
+        data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>", content: content}
+      });
+    });
+
     $("#participate_btn").on("click", function(e){
       $.ajax({
         method: "POST",
         url: "/createline",
-        data: {id: "<%= @current_user.id %>", tale: "<%= @tale.id %>"}
+        data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>"}
       })
     });
-  })
+
+    $("#save_btn").on("click", function(e){
+      var content = $('#newline').text();
+
+      $.ajax({
+        method: "POST",
+        url: "/saveline",
+        data: {id: "<%= session[:user_id] %>", tale: "<%= @tale.id %>", content: content, done: true}
+      })
+    });
+  });
+
 </script>
+
+<input type="hidden" id="curr_user_id" value="<%= session[:user_id] %>">
+<input type="hidden" id="tale_id" value="<%= @tale.id %>">
 
 <div id="tale">
   <div class="line">
     Google docs, dean edition
   </div>
 
-
-
   <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> >
   </div>
+
+  <% unless @tale.awaiting_new_line? && @current_user && @current_user != @tale.lines.last.user %>
+    <% participate_css = "display:none;" %>
+  <% end %>
+  <% if !@tale.is_current_line_user?(@current_user) %>
+    <% save_css = "display:none;" %>
+  <% end %>
+
+  <div id="participate" style="<%= participate_css %>">
+    <button id="participate_btn" >Participate in this Story</button>
+  </div>
+
+  <div id="save" style="<%= save_css %>">
+    <button id="save_btn">Add to the Story</button>
+  </div>
 </div>
-<% if @tale.awaiting_new_line? %>
-  <button id="participate_btn">Participate in this Story</button>
-<% end %>

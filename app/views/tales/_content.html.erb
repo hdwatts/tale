@@ -1,4 +1,8 @@
-<% lines.each do |line| %>
-  <p> <%= line.content %> </p>
-  (<b>Written By:</b> <%= link_to line.user.username, line.user %>)
-<% end %>
+<div id="content">
+  <% lines.each do |line| %>
+    <% if line != lines.last || @tale.awaiting_new_line? %>
+      <p> <%= line.content %> </p>
+      (<b>Written By:</b> <%= link_to line.user.username, line.user %>)
+    <% end %>
+  <% end %>
+</div>
