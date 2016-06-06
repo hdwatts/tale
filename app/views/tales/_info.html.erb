@@ -1,3 +1,12 @@
-<b>Started By:</b> <%= link_to tale.owner.username, tale.owner %>
-<b>Status:</b> <%= tale.formatted_status %>
-<b>Prompt:</b> <p> <%= tale.prompt %>
+<div id="owner">
+  <label>Started By:</label><p><%= link_to tale.owner.username, tale.owner %></p>
+</div>
+<div id="status">
+  <label>Status:</label> <p><%= tale.formatted_status %></p>
+</div>
+<div id="prompt">
+  <label>Prompt:</label> <p> <%= tale.prompt %></p>
+</div>
+<div id="tags">
+  <label>Tags:</label> <p> <% tale.tags.each do |tag| %> <%= tag.name %> <% end %>
+</div>

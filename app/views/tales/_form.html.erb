@@ -13,7 +13,7 @@
   </div>
 
   <div>
-    <%= f.fields_for :tags do |ff| %>
+    <%= f.fields_for @tags do |ff| %>
      <%= ff.label :tags %>
      <%= ff.text_field :name %>
     <% end %>
