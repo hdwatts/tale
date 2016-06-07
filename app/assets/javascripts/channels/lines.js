@@ -25,7 +25,7 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
     }
 
     if ( data.done ) {
-      if ( newlineField.parent("#outerspan") ) {
+      if ( newlineField.parent("#outerspan").length > 0 ) {
         var parentElem = newlineField.parent("#outerspan");
         var linetext = parentElem.clone().children().remove().end().text();
         var childElem = parentElem.children()[0];

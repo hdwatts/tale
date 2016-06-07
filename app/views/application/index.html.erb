@@ -4,6 +4,7 @@ Tales
   <% @tales2.each do |tale| %>
     <h1><%= link_to tale.title, tale %></h1>
     <div class="index-text">
+      <div class="index-gradient"></div>
       <span id="outerspan"> <%= tale.display_last_line %> <span id="newline" data-tale-id="<%= tale.id %>"></span></span>
     </div>
   <% end %>
@@ -11,6 +12,7 @@ Tales
   <% @tales.each do |tale| %>
     <h1><%= link_to tale.title, tale %></h1>
     <div class="index-text">
+      <div class="index-gradient"></div>
       <span id="outerspan"> <%= tale.display_last_line %> <span id="newline" data-tale-id="<%= tale.id %>"></span></span>
     </div>
   <% end %>
