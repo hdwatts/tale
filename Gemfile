@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'rails_12factor', group: :production
 
+gem 'figaro'
+
 # gem 'font-awesome-sass'
 
 # Use Capistrano for deployment
