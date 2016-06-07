@@ -1,6 +1,17 @@
+
 <div id="title">
-  <h4><span class="title"><%= tale.title %></span><span class="owner"> by <%= link_to tale.owner.username, tale.owner %></span></h4>
+  <h4>
+    <span class="title"><%= tale.title %></span>
+    <span class="owner"> by <%= link_to tale.owner.username, tale.owner %></span>
+  </h4>
 </div>
+
+<% if tale.owner == @current_user %>
+  <div id="edit-buttons">
+    <%= link_to "Delete", tale_path(@tale), method: :delete, class: 'btn'%>
+  </div>
+<% end %>
+
 <div id="status">
   * <%= tale.formatted_status %>
 </div>

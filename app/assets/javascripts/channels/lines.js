@@ -25,14 +25,14 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
       }
 
       if ( data.done ) {
-        $('#tale_content').append("<p>" + data.content + " </p>(<b>Written By:</b> " + data.user_link + ")")
+        $('#tale_content').append(data.display_line)
 
         $('#newline').attr("contenteditable", "false");
         $('#newline').text("")
         $("#save").hide();
         $("#close").hide();
 
-        if ( data.user_id != $('#curr_user_id').val() ) {
+        if ( $('#curr_user_id').val() != "" && data.user_id != $('#curr_user_id').val() ) {
           $("#participate").show();
         }
       }
@@ -51,11 +51,21 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
 
 $(function(){
   $('#newline').on("keyup", function(){
-    var content = $(this).text();
+    var content = $(this)[0].innerText;
+
     $.ajax({
       method: "POST",
       url: "/updateline",
-      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content}
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content},
+      success: function(response){
+        var remainingCount = 250 - $('#newline').text().trim().length
+        if (remainingCount < 0) {
+          $('#character_count').text('You have passed the limit.')
+        }
+        else {
+          $('#character_count').text('(' + remainingCount + ' characters remaining)')
+        }  
+      }
     });
   });
 
@@ -68,7 +78,7 @@ $(function(){
   });
 
   $("#save_btn").on("click", function(e){
-    var content = $('#newline').text();
+    var content = $('#newline')[0].innerText;
 
     $.ajax({
       method: "POST",
@@ -78,7 +88,7 @@ $(function(){
   });
 
   $("#close_btn").on("click", function(e){
-    var content = $('#newline').text();
+    var content = $('#newline')[0].innerText;
     $.ajax({
       method: "POST",
       url: "/saveline",

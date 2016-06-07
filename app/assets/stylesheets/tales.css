@@ -33,6 +33,7 @@
   margin-left: .5em;
   vertical-align: super;
 }
+
 /* TALE SHOW VIEW */
 
 .tale.show #title {
@@ -46,7 +47,6 @@
   margin-top: .75em;
 }
 
-
 /* TALE TEASER VIEW */
 
 .tale.teaser .title {
@@ -57,4 +57,7 @@
   text-decoration: none;
 }
 
-
+#character_count {
+  font-size: small;
+  font-style: italic;
+}
