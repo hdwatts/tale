@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160603192830) do
   end
 
   create_table "tales", force: :cascade do |t|
+    t.string   "title"
     t.string   "prompt"
     t.integer  "owner_id"
     t.boolean  "open",       default: true

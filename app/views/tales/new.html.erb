@@ -3,6 +3,11 @@
 <%= form_for @tale do |f| %>
   
   <fieldset>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </fieldset>
+
+  <fieldset>
     <%= f.label :prompt %>
     <%= f.text_area :prompt, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250 %>
   </fieldset>

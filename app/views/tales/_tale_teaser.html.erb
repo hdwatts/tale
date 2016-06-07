@@ -1,5 +1,10 @@
 <div class="tale teaser">
-  <h2 class="prompt"><%= tale.prompt %></h2>
+  <%= link_to tale do %>
+    <div class="tale_info">
+      <h1 class="title"><%= tale.title.capitalize %></h1>
+      <h2 class="prompt"><%= tale.prompt %></h2>
+    </div>
+  <% end %>
   <div class="meta">
     <div class="owner">
       <h5>Started by <%= link_to tale.owner.username, tale.owner.username %></h5>

@@ -7,6 +7,9 @@ class Tale < ApplicationRecord
   accepts_nested_attributes_for :lines
   accepts_nested_attributes_for :tags
 
+  validates_presence_of :title
+  validates :title, length: { maximum: 65}
+
 
 
   def is_current_line_user?(user)
