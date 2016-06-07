@@ -18,14 +18,9 @@ class LineController < ApplicationController
 
   def update
     return head :forbidden if invalid_line?
-    @line.update(strong_params)
-    return head :bad_request unless @line.valid?
-    @line.save
-    if ready_to_close?
-      @tale.close
-      @tale.save
-    end
-    ActionCableBroadcaster.new(@line).edit_line_broadcast
+    return head :bad_request unless @line.update(strong_params)
+    @tale.close if ready_to_close?
+    ActionCableBroadcaster.new(@line).update_line_broadcast
     head :ok
   end
 
@@ -52,7 +47,7 @@ class LineController < ApplicationController
   end
 
   def ready_to_close?
-    params[:closed] && @current_user = @tale.owner
+    params[:closed] && @current_user == @tale.owner
   end
 
 end

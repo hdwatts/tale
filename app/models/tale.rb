@@ -18,7 +18,7 @@ class Tale < ApplicationRecord
   end
 
   def close
-    open = false
+    update(open: false)
   end
 
   def self.open_tales
