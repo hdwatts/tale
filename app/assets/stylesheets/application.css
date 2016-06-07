@@ -33,10 +33,22 @@ main {
   white-space:nowrap;
 }
 
+.index-gradient{
+  background: rgba(0,0,0,0); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1)); /*Standard*/  width:10%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+}
+
 .index-text {
   height:100%;
   overflow-x:hidden;
   white-space:nowrap;
+  position: relative;
 }
 
 .index-text span {
