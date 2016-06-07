@@ -42,7 +42,7 @@ class TalesController < ApplicationController
 private
   
   def tale_params
-    params.require(:tale).permit(:prompt, :owner_id, lines_attributes: [:id, :content])
+    params.require(:tale).permit(:prompt, :title, :owner_id, lines_attributes: [:id, :content])
   end
 
   def tag_params
