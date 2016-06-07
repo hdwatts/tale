@@ -29,9 +29,6 @@ main {
   padding-top: 1em;
  }
 
-#index-tales {
-  white-space:nowrap;
-}
 
 .index-gradient{
   background: rgba(0,0,0,0); /* For browsers that do not support gradients */
@@ -61,7 +58,6 @@ main {
 
 div#newline {
   width:100%;
-  white-space: pre;
   background-color: rgba(250, 255, 189, 1);
   padding-right: 0;
   margin-right: 0;

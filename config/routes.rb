@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tales
   resources :users
   resources :sessions
+  get '/tags/:name' => 'tags#show', as: :tag
   get '/signup', to: 'users#new'
   get '/welcome', to: 'users#welcome'
   post '/sessions/new', to: 'sessions#create'

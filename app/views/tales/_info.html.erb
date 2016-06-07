@@ -37,6 +37,6 @@
 <div class="foot">
   <div id="divider"></div>
   <h5 id="tags">
-    <% tale.tags.each do |tag| %><small>#<%= tag.name %></small><% end %>
+    <% tale.tags.each do |tag| %><small><%= link_to "##{tag.name}", tag_path(tag.name) %></small><% end %>
   </h5>
 </div>
