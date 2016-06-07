@@ -29,7 +29,25 @@ main {
   padding-top: 1em;
  }
 
-#newline {
+#index-tales {
+  white-space:nowrap;
+}
+
+.index-text {
+  height:100%;
+  overflow-x:hidden;
+  white-space:nowrap;
+}
+
+.index-text span {
+  display: inline-block;
+}
+
+#outerspan {
+  float:right;
+}
+
+div#newline {
   width:100%;
   white-space: pre;
   background-color: rgba(250, 255, 189, 1);

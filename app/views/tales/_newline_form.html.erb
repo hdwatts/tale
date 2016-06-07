@@ -4,7 +4,7 @@
   <input type="hidden" id="tale_id" value="<%= @tale.id %>">
 
   <div id="tale">
-    <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> ></div>
+    <div class="line" id="newline" data-tale-id="<%= tale.id %>" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> ></div>
 
     <div id="character-count">
     </div>
