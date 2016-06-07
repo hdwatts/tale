@@ -25,6 +25,15 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
     }
 
     if ( data.done ) {
+      if ( newlineField.parent("#outerspan") ) {
+        var parentElem = newlineField.parent("#outerspan");
+        var linetext = parentElem.clone().children().remove().end().text();
+        var childElem = parentElem.children()[0];
+        childElem.text("");
+        parentElem.text(linetext +" " + data.content);
+        parentElem.append(childElem);
+
+      }
       $('#tale_content').append(data.display_line)
 
       newlineField.attr("contenteditable", "false");
