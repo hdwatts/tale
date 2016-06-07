@@ -1,8 +1,14 @@
-<h2>Sign In Here!</h2>
-<%= form_for :user do |f| %>
- Username: <%= f.text_field :username %><br>
- Password: <%= f.password_field :password %><br>
- <%= f.submit "Submit" %>
- <% end %><br>
-
-New user? <%= link_to "Sign up here!", signup_path %>
+<div id="sign-in">
+  <%= form_for :user do |f| %>
+    <fieldset>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </fieldset>
+    <fieldset>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </fieldset>
+    <%= f.submit "Sign In", class: "btn btn-large" %>
+    <div class="signup-copy">New user? <%= link_to "Sign up here!", signup_path %></div>
+    <% end %>
+</div>
