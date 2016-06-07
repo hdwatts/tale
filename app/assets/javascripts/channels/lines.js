@@ -32,7 +32,7 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
         $("#save").hide();
         $("#close").hide();
 
-        if ( data.user_id != $('#curr_user_id').val() ) {
+        if ( $('#curr_user_id').val() != "" && data.user_id != $('#curr_user_id').val() ) {
           $("#participate").show();
         }
       }
