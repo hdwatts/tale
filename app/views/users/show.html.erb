@@ -1,16 +1,36 @@
-<h1>This is <%= @user.username %>'s page!</h1>
+<div id="user show">
 
+  <div class="profile">
+    <h1><i class="fa fa-user" aria-hidden="true"></i> <%= @user.username %></h1>
+    <div class="meta">
+      <%= render 'info' %>
+    </div>
+  </div>
 
-<%= render 'info' %>
+  <div id="tales">
+    <div id="user-tales" class="reveal">
+      <div class="menu-header">
+        <h2><span class="reveal-state">+</span> Tales I Own</h2>
+        <span class="count"><%= @user.tales_owned.count %> entries</span>
+      </div>
+      <div class="items">
+        <% @user.tales_owned.each do |tale| %>
+          <%= render 'tales/tale_teaser', tale: tale, owned_by_user: true %>
+        <% end %>
+      </div>
+    </div>
 
+    <div id="user-contributions" class="reveal">
+      <div class="menu-header">
+        <h2><span class="reveal-state">+</span> Tales I've Contributed To</h2>
+        <span class="count"><%= @user.tales_contributed.count %> entries</span>
+      </div>
+      <div class="items">
+      <% @user.tales_contributed.each do |tale| %>
+        <%= render 'tale', tale: tale, owned_by_user: false %>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-<h2> Tales started by <%= @user.username %> </h2>
-<% @user.tales_owned.each do |tale| %>
-  <%= render 'tales/tale_teaser', tale: tale, owned_by_user: true %>
-<% end %>
-
-<h2> Tales <%= @user.username %> has contributed to </h2>
-<% @user.tales_contributed.each do |tale| %>
-  <%= render 'tale', tale: tale, owned_by_user: false %>
-<% end %>
-
+</div>

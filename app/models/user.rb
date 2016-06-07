@@ -18,7 +18,7 @@ class User < ApplicationRecord
   end
 
   def tales_owned
-    tales.where(owner_id: id)
+    tales.where(owner_id: id).reverse
   end
 
   def tales_contributed
