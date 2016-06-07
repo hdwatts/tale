@@ -51,6 +51,9 @@
   background-color: #fff;
   display: inline-block;
 }
+.tale.show #status span {
+    background-color: rgba(250, 255, 189, 1);
+}
 
 .tale.show .line {
   position: relative;
@@ -62,7 +65,7 @@
 
 .tale.show .line .author {
   position: absolute;
-  left: 600px;
+  left: 585px;
   top: 0;
   display: none;
   }
