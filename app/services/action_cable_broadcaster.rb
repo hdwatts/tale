@@ -20,7 +20,7 @@ class ActionCableBroadcaster
       owner_id: tale.owner.id
   end
 
-  def edit_line_broadcast
+  def update_line_broadcast
     ActionCable.server.broadcast 'lines',
       content: line.content,
       user_id: line.user.id,

@@ -19,8 +19,9 @@ class LineController < ApplicationController
   def update
     return head :forbidden if invalid_line?
     @line.update(strong_params)
-    return head :bad_request unless @line.save
-    if params[:closed] && @current_user = @tale.owner
+    return head :bad_request unless @line.valid?
+    @line.save
+    if ready_to_close?
       @tale.close
       @tale.save
     end
@@ -48,6 +49,10 @@ class LineController < ApplicationController
 
   def invalid_line?
     @current_user.id != params[:id].to_i || !@tale.is_current_line_user?(@current_user)
+  end
+
+  def ready_to_close?
+    params[:closed] && @current_user = @tale.owner
   end
 
 end
