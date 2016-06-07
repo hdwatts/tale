@@ -38,13 +38,15 @@ function showAuthors() {
 }
 
 function showTitles() {
-  $(".tale.show #title").hide();
-  var topofDiv = $(".tale.show .foot").offset().top;
-  $(window).scroll(function(){
-    if($(window).scrollTop() > topofDiv){
-       $(".tale.show #title").show();
-    } else {
-       $(".tale.show #title").hide();
-    }
-  })
+  if ( $(".tale.show #title").length > 0 ) {
+    $(".tale.show #title").hide();
+    var topofDiv = $(".tale.show .foot").offset().top;
+    $(window).scroll(function(){
+      if($(window).scrollTop() > topofDiv){
+         $(".tale.show #title").show();
+      } else {
+         $(".tale.show #title").hide();
+      }
+    })
+  }
 }
