@@ -25,7 +25,7 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
       }
 
       if ( data.done ) {
-        $('#tale_content').append("<p>" + data.content + " </p>(<b>Written By:</b> " + data.user_link + ")")
+        $('#tale_content').append(data.display_line)
 
         $('#newline').attr("contenteditable", "false");
         $('#newline').text("")
