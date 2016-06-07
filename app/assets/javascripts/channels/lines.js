@@ -56,7 +56,7 @@ $(function(){
       method: "POST",
       url: "/updateline",
       data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content},
-      success: function(response){
+      success: function(){
         var remainingCount = 250 - $('#newline').text().trim().length
         if (remainingCount < 0) {
           $('#character_count').text('You have passed the limit.')
@@ -68,11 +68,13 @@ $(function(){
     });
   });
 
-  $("#participate_btn").on("click", function(e){
+  $("#participate_btn").on("click", function(){
     $.ajax({
       method: "POST",
       url: "/createline",
-      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val()}
+      data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val()},
+      success: function(){
+        setTimeout(function(){$("#newline").focus()}, 0)}
     })
   });
 
