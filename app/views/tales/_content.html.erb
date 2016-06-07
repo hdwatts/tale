@@ -1,8 +1,7 @@
 <div id="tale_content">
   <% lines.each do |line| %>
     <% if line != lines.last || @tale.awaiting_new_line? %>
-      <p> <%= line.content %> </p>
-      (<b>Written By:</b> <%= line.user.html_link_to_user %>)
+      <%= line.display_line %>
     <% end %>
   <% end %>
 </div>

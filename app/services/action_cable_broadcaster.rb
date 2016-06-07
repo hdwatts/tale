@@ -25,7 +25,7 @@ class ActionCableBroadcaster
       content: line.content,
       user_id: line.user.id,
       tale_id: tale.id,
-      user_link: line.user.html_link_to_user,
+      display_line: line.display_line,
       done: line.done,
       tale_open: tale.open
   end
