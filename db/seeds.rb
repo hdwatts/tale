@@ -17,7 +17,7 @@ end
 
 5.times do
   user = User.all.sample
-  t = Tale.create(prompt: Faker::Hipster.paragraph(rand(3)), owner: user)
+  t = Tale.create(title: Faker::Hipster.word, prompt: Faker::Hipster.paragraph(rand(3)), owner: user)
   t.save!
   content = Faker::Hipster.paragraph until content && content.length <= 250
   first_line = Line.create(user: user, tale: t, content: content, done: true)
