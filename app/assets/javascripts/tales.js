@@ -1,5 +1,7 @@
 $(function() {
   revealDisplays()
+  showAuthors()
+    showTitles()
 })
 
 function checkMaxlength(line)
@@ -24,4 +26,25 @@ function revealDisplays() {
       })
     $(this).siblings().slideToggle( "slow");
   });
+}
+
+function showAuthors() {
+  $( ".tale.show .line").mouseover(function() {
+    $( this ).addClass('active');
+  })
+  $( ".tale.show .line").mouseout(function() {
+    $( this ).removeClass('active');
+  });
+}
+
+function showTitles() {
+  $(".tale.show #title").hide();
+  var topofDiv = $(".tale.show .foot").offset().top;
+  $(window).scroll(function(){
+    if($(window).scrollTop() > topofDiv){
+       $(".tale.show #title").show();
+    } else {
+       $(".tale.show #title").hide();
+    }
+  })
 }

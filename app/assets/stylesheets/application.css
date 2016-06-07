@@ -23,9 +23,10 @@ body {
  }
 
 main {
-  max-width: 600px;
+  max-width: 585px;
   width: 100%;
   margin: 0 auto;
+  padding-top: 1em;
  }
 
 #newline {
@@ -33,6 +34,10 @@ main {
   white-space: pre;
   background-color: rgba(250, 255, 189, 1);
   min-height: 1em;
+  padding-right: 0;
+  margin-right: 0;
+  margin-bottom: .5em;
+  height: 2em;
 }
  
 #content {
@@ -54,7 +59,7 @@ a:hover, a:active,
   background-color: rgba(250, 255, 189, 1);
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: 400;
 }
 
@@ -88,6 +93,7 @@ nav a {
   text-decoration: none;
   font-size: medium;
   margin-left: 1em;
+  line-height: 1.75em;
 }
 
 /* FORMS */
@@ -125,6 +131,15 @@ form fieldset textarea {
 form .btn {
   width: 100%;
   margin-top: .5em;
+}
+
+.buttons .btn { 
+  width: 100%;
+  font-size: large;
+  padding: .5em;
+  border: none;
+  border-bottom: 1px solid;
+  margin-bottom: 3em;
 }
 
 #sign-in .signup-copy {

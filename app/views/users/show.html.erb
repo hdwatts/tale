@@ -27,7 +27,7 @@
       </div>
       <div class="items">
       <% @user.tales_contributed.each do |tale| %>
-        <%= render 'tale', tale: tale, owned_by_user: false %>
+        <%= render 'tales/tale_teaser', tale: tale, owned_by_user: false %>
       <% end %>
       </div>
     </div>

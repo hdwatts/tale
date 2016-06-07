@@ -59,11 +59,11 @@ $(function(){
       success: function(){
         var remainingCount = 250 - $('#newline').text().trim().length
         if (remainingCount < 0) {
-          $('#character_count').text('You have passed the limit.')
+          $('#character-count').text('You have passed the limit.')
           $("#save").hide()
         }
         else {
-          $('#character_count').text('(' + remainingCount + ' characters remaining)')
+          $('#character-count').text('(' + remainingCount + ' characters remaining)')
           $("#save").show()
         }  
       }

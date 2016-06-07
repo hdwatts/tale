@@ -1,33 +1,87 @@
-.tale.teaser h2.prompt {
-  font-weight: 400;
+.tale .title h1 {
+  display: inherit;
+  font-weight: 600;
+  padding-right: .5em;
 }
 
-.tale.teaser .meta {
+.tale h2.prompt {
+  font-weight: 400;
+  display: inherit;
+}
+
+.tale .meta {
     display: flex;
     justify-content: space-between;
 }
 
-.tale.teaser .meta small {
+.tale .meta small {
   font-weight: 400;
 }
 
-.tale.teaser  .foot {
+.tale .foot {
     display: flex;
     justify-content: space-between;
 }
 
-.tale.teaser h5#tags {
+.tale h5#tags {
     margin-top: 0;
     font-weight: 400;
     opacity: .35;
+    text-align: right;
 }
 
-.tale.teaser h5#tags small {
+.tale h5#tags small {
   margin-left: .5em;
   vertical-align: super;
 }
 
-#character_count {
+/* TALE SHOW VIEW */
+
+.tale.show #title {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(255,255,255,.75);
+  z-index: 100;
+}
+.tale.show #title h4 {
+  margin-top: .75em;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.tale.show .line {
+  position: relative;
+  line-height: 2em;
+  margin: 1.5em 0;
+  padding-right: 12em;
+  margin-right: -12em;
+  }  
+
+.tale.show .line .author {
+  position: absolute;
+  left: 600px;
+  top: 0;
+  display: none;
+  }
+.tale.show .line.active .author {
+  display: block;
+ } 
+/* TALE TEASER VIEW */
+
+.tale.teaser .title {
+  margin-top: 3em;
+}
+
+.tale.teaser .title a {
+  text-decoration: none;
+}
+
+#character-count {
   font-size: small;
   font-style: italic;
+  height: 2em;
+  text-align: right;
 }
