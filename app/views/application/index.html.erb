@@ -1,17 +1,17 @@
 Tales
 
-<% @tales2.each do |tale| %>
-  <div id="index-tales">
+<div id="index-tales">
+  <% @tales2.each do |tale| %>
     <h1><%= link_to tale.title, tale %></h1>
     <div class="index-text">
-      <span id="outerspan"> <%= tale.lines.where(done: true).last.content %> <span id="newline" data-tale-id="<%= tale.id %>"></span></span>
+      <span id="outerspan"> <%= tale.display_last_line %> <span id="newline" data-tale-id="<%= tale.id %>"></span></span>
     </div>
-<% end %>
+  <% end %>
 
-<br><br><br>
-
-<% @tales.each do |tale| %>
+  <% @tales.each do |tale| %>
     <h1><%= link_to tale.title, tale %></h1>
-    <div class="line" id="newline" data-tale-id="<%= tale.id %>"></div>
-  </div>
-<% end %>
+    <div class="index-text">
+      <span id="outerspan"> <%= tale.display_last_line %> <span id="newline" data-tale-id="<%= tale.id %>"></span></span>
+    </div>
+  <% end %>
+</div>
