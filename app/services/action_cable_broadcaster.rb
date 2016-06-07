@@ -37,5 +37,4 @@ class ActionCableBroadcaster
       tale_id: tale.id
   end
 
-
 end
