@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/welcome', to: 'users#welcome'
   post '/sessions/new', to: 'sessions#create'
-
   post '/updateline' => 'line#show'
   post '/createline' => 'line#create'
   post '/saveline' => 'line#update'
