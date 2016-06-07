@@ -26,3 +26,8 @@
   margin-left: .5em;
   vertical-align: super;
 }
+
+#character_count {
+  font-size: small;
+  font-style: italic;
+}

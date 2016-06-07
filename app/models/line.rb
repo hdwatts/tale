@@ -6,6 +6,10 @@ class Line < ApplicationRecord
   validate :done_without_content
 
   def done_without_content
-    errors.add(:content, "cannot be empty") if done && !content
+    errors.add(:content, "cannot be empty") if done && no_content
+  end
+
+  def no_content
+    !content || content.strip == ""
   end
 end
