@@ -1,0 +1,28 @@
+.tale.teaser h2.prompt {
+  font-weight: 400;
+}
+
+.tale.teaser .meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tale.teaser .meta small {
+  font-weight: 400;
+}
+
+.tale.teaser  .foot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tale.teaser h5#tags {
+    margin-top: 0;
+    font-weight: 400;
+    opacity: .35;
+}
+
+.tale.teaser h5#tags small {
+  margin-left: .5em;
+  vertical-align: super;
+}

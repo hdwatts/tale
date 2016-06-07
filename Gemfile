@@ -27,6 +27,10 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'rails_12factor', group: :production
+
+gem 'font-awesome-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -39,6 +43,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'simplecov'
+
 end
 
 group :development do
