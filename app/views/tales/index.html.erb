@@ -1,19 +1,29 @@
 
-
-<h2> Open Tales </h2>
-<ul>
+<div id="tales" class="index">
+  <div id="open-tales" class="reveal">
+    <div class="menu-header">
+      <h2><span class="reveal-state">+</span> Open Tales </h2>
+      <span class="count"><%= Tale.open_tales.count %> entries</span>
+    </div>
+    <div class="items">
 <% Tale.open_tales.each do |tale| %>
-  <li><%= link_to tale.prompt, tale %></li>
+  <%= render 'tales/tale_teaser', tale: tale %>
 <% end %>
-</ul>
-<hr>
+      </div>
+    </div>
 
-<h2> Closed Tales </h2>
-<ul>
+ <div id="closed-tales" class="reveal">
+      <div class="menu-header">
+        <h2><span class="reveal-state">+</span> Closed Tales </h2><span class="count"><%= Tale.closed_tales.count %> entries</span>
+      </div>
+      <div class="items">
 <% Tale.closed_tales.each do |tale| %>
-  <li><%= link_to tale.prompt, tale %></li>
+  <%= render 'tales/tale_teaser', tale: tale %>
 <% end %>
-</ul>
-<hr>
+      </div>
+    </div>
+
+
 <%= button_to "Feeling spontaneous?", @random_tale, class: "btn", method: "get" %>
 
+  </div>
