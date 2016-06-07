@@ -1,12 +1,31 @@
-<div id="owner">
-  <label>Started By:</label><p><%= link_to tale.owner.username, tale.owner %></p>
+<div id="title">
+  <h4><span class="title"><%= tale.title %></span><span class="owner"> by <%= link_to tale.owner.username, tale.owner %></span></h4>
 </div>
 <div id="status">
-  <label>Status:</label> <p><%= tale.formatted_status %></p>
+  * <%= tale.formatted_status %>
 </div>
-<div id="prompt">
-  <label>Prompt:</label> <p> <%= tale.prompt %></p>
+
+<div class="title">
+  <h1 class="title"><span><%= tale.title.capitalize %></span></h1>
+  <h2 class="prompt"><span><%= tale.prompt %></span></h2>
 </div>
-<div id="tags">
-  <label>Tags:</label> <p> <% tale.tags.each do |tag| %> <%= tag.name %> <% end %>
+
+<div class="meta">
+    <div class="owner">
+      <h5>Started by <%= link_to tale.owner.username, tale.owner.username %></h5>
+    </div>
+    <div class="lines">
+      <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %>lines<%else%>Line<%end%></h5>
+    </div>
+    <div class="last-updated">
+      <h5><%= link_to tale.lines.last.user.username, tale.lines.last.user %> 
+      <small>updated <%= time_ago_in_words(tale.lines.last.created_at) %> ago</small></h5>
+    </div>
+  </div>
+
+<div class="foot">
+  <div id="divider"></div>
+  <h5 id="tags">
+    <% tale.tags.each do |tag| %><small>#<%= tag.name %></small><% end %>
+  </h5>
 </div>

@@ -87,6 +87,7 @@ nav a {
   text-decoration: none;
   font-size: medium;
   margin-left: 1em;
+  line-height: 1.75em;
 }
 
 /* FORMS */
