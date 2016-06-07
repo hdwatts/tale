@@ -2,15 +2,9 @@
 
   <input type="hidden" id="curr_user_id" value="<%= session[:user_id] %>">
   <input type="hidden" id="tale_id" value="<%= @tale.id %>">
-  <% if @tale.owner == @current_user %>
-    <div id="edit-buttons">
-      <%= link_to "Delete", tale_path(@tale), method: :delete, class: 'btn'%>
-    </div>
-  <% end %>
 
   <div id="tale">
-    <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> >
-    </div>
+    <div class="line" id="newline" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> ></div>
     <% unless @tale.awaiting_new_line? && @current_user && @current_user != @tale.lines.last.user %>
       <% participate_css = "display:none;" %>
     <% end %>
