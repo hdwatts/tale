@@ -20,6 +20,10 @@ class Tale < ApplicationRecord
     self.lines.last.done?
   end
 
+  def close
+    update(open: false)
+  end
+
   def self.open_tales
     where(open: true)
   end
