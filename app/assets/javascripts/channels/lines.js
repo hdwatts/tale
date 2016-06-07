@@ -60,10 +60,10 @@ $(function(){
       success: function(response){
         var remainingCount = 250 - $('#newline').text().trim().length
         if (remainingCount < 0) {
-          $('#character_count').text('You have passed the limit.')
+          $('#character-count').text('You have passed the limit.')
         }
         else {
-          $('#character_count').text('(' + remainingCount + ' characters remaining)')
+          $('#character-count').text('(' + remainingCount + ' characters remaining)')
         }  
       }
     });
