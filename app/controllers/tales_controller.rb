@@ -29,6 +29,7 @@ class TalesController < ApplicationController
 
   def index
     @tales = Tale.all
+    @random_tale = Tale.all.sample
   end
 
   def destroy
