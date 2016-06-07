@@ -1,5 +1,10 @@
 <div id="owner">
   <label>Started By:</label><p><%= link_to tale.owner.username, tale.owner %></p>
+  <% if tale.owner == @current_user %>
+  <div id="edit-buttons">
+    <%= link_to "Delete", tale_path(@tale), method: :delete, class: 'btn'%>
+  </div>
+<% end %>
 </div>
 <div id="status">
   <label>Status:</label> <p><%= tale.formatted_status %></p>

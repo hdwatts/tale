@@ -32,7 +32,7 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
         $("#save").hide();
         $("#close").hide();
 
-        if ( data.user_id != $('#curr_user_id').val() ) {
+        if ( $('#curr_user_id').val() != "" && data.user_id != $('#curr_user_id').val() ) {
           $("#participate").show();
         }
       }
@@ -51,7 +51,8 @@ App.messages = App.cable.subscriptions.create('LineChannel', {
 
 $(function(){
   $('#newline').on("keyup", function(){
-    var content = $(this).text();
+    var content = $(this)[0].innerText;
+
     $.ajax({
       method: "POST",
       url: "/updateline",
@@ -77,7 +78,7 @@ $(function(){
   });
 
   $("#save_btn").on("click", function(e){
-    var content = $('#newline').text();
+    var content = $('#newline')[0].innerText;
 
     $.ajax({
       method: "POST",
@@ -87,7 +88,7 @@ $(function(){
   });
 
   $("#close_btn").on("click", function(e){
-    var content = $('#newline').text();
+    var content = $('#newline')[0].innerText;
     $.ajax({
       method: "POST",
       url: "/saveline",

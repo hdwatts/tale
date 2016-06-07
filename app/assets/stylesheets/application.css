@@ -30,6 +30,7 @@ main {
 
 #newline {
   width:100%;
+  white-space: pre;
   background-color: rgba(250, 255, 189, 1);
   min-height: 1em;
 }
