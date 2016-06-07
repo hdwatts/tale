@@ -18,6 +18,8 @@ class LineController < ApplicationController
 
   def update
     params[:content].gsub!(/\n/, "<br>")
+    params[:content].gsub!(/\</, "&lt;")
+    params[:content].gsub!(/\>/, "&gt;")
     return head :forbidden if invalid_line?
     return head :bad_request unless @line.update(strong_params)
     @tale.close if ready_to_close?
