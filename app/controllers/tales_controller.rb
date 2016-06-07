@@ -36,7 +36,7 @@ class TalesController < ApplicationController
     @tale = Tale.find(params[:id])
     if @tale.owner == current_user
       @tale.destroy
-      redirect_to root_path
+      redirect_to new_session
     end
   end
 

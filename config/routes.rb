@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   
   mount ActionCable.server => '/cable'
   
-  root 'sessions#new'
+  root 'application#index'
   resources :tales
   resources :users
   resources :sessions
   get '/signup', to: 'users#new'
   get '/welcome', to: 'users#welcome'
-  post '/', to: 'sessions#create'
+  post '/sessions/new', to: 'sessions#create'
 
   post '/updateline' => 'line#show'
   post '/createline' => 'line#create'
