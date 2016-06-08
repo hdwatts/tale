@@ -2,13 +2,13 @@
 <div id="title">
   <h4>
     <span class="title"><%= tale.title %></span>
-    <span class="owner"> by <%= link_to tale.owner.username, tale.owner %></span>
+    <span class="owner"> by <%= link_to tale.owner_name, tale.owner %></span>
   </h4>
 </div>
 
-<% if tale.owner == @current_user %>
+<% if tale.owner == current_user %>
   <div id="edit-buttons">
-    <%= link_to "Delete", tale_path(@tale), method: :delete, class: 'btn'%>
+    <%= link_to "Delete", tale_path(tale), method: :delete, class: 'btn'%>
   </div>
 <% end %>
 
@@ -23,13 +23,13 @@
 
 <div class="meta">
     <div class="owner">
-      <h5>Started by <%= link_to tale.owner.username, tale.owner.username %></h5>
+      <h5>Started by <%= link_to tale.owner_name, tale.owner %></h5>
     </div>
     <div class="lines">
       <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %>lines<%else%>Line<%end%></h5>
     </div>
     <div class="last-updated">
-      <h5><%= link_to tale.lines.last.user.username, tale.lines.last.user %> 
+      <h5><%= link_to tale.lines.last.user.username, tale.lines.last.user %>
       <small>updated <%= time_ago_in_words(tale.lines.last.created_at) %> ago</small></h5>
     </div>
   </div>

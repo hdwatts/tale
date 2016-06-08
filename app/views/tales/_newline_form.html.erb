@@ -1,21 +1,21 @@
-<% if @tale.open? %>
+<% if tale.open? %>
 <div class="new-line">
   <input type="hidden" id="curr_user_id" value="<%= session[:user_id] %>">
-  <input type="hidden" id="tale_id" value="<%= @tale.id %>">
+  <input type="hidden" id="tale_id" value="<%= tale.id %>">
 
   <div id="tale">
-    <div class="line" id="newline" data-tale-id="<%= tale.id %>" <% if @tale.is_current_line_user?(@current_user) %> contenteditable="true" <% end %> ></div>
+    <div class="line" id="newline" data-tale-id="<%= tale.id %>" <% if tale.is_current_line_user?(current_user) %> contenteditable="true" <% end %> ></div>
 
     <div id="character-count">
     </div>
-    <% unless @tale.awaiting_new_line? && @current_user && @current_user != @tale.lines.last.user %>
+    <% unless tale.awaiting_new_line? && current_user && current_user != @tale.lines.last.user %>
       <% participate_css = "display:none;" %>
     <% end %>
-    <% if !@tale.is_current_line_user?(@current_user) %>
+    <% if !tale.is_current_line_user?(current_user) %>
       <% save_css = "display:none;" %>
     <% end %>
 
-    <% if @tale.owner != @current_user || !@tale.is_current_line_user?(@current_user) %>
+    <% if tale.owner != current_user || !tale.is_current_line_user?(current_user) %>
       <% close_css = "display:none;" %>
     <% end %>
 

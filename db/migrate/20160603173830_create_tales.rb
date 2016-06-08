@@ -7,5 +7,7 @@ class CreateTales < ActiveRecord::Migration[5.0]
       t.boolean :open, default: true
       t.timestamps
     end
+
+    add index :tales, :owner_id
   end
 end
