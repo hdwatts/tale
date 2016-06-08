@@ -1,0 +1,10 @@
+.user.show .profile {
+  position: relative;
+  margin-bottom: 4em;
+}
+
+.user.show .edit {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

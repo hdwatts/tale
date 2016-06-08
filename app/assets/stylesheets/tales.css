@@ -83,7 +83,13 @@
 .tale.show .line.active .author {
   display: block;
  } 
-
+ 
+#character-count {
+  font-size: small;
+  font-style: italic;
+  height: 2em;
+  text-align: right;
+}
 /* TALE TEASER VIEW */
 
 .tale.teaser .title {
@@ -94,9 +100,3 @@
   text-decoration: none;
 }
 
-#character-count {
-  font-size: small;
-  font-style: italic;
-  height: 2em;
-  text-align: right;
-}
