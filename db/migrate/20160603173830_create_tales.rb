@@ -3,11 +3,11 @@ class CreateTales < ActiveRecord::Migration[5.0]
     create_table :tales do |t|
       t.string :title
       t.string :prompt
-      t.integer :owner_id, foreign_key: true
+      t.integer :owner_id
       t.boolean :open, default: true
       t.timestamps
     end
 
-    add index :tales, :owner_id
+    add_index :tales, :owner_id
   end
 end
