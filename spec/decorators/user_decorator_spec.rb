@@ -15,4 +15,11 @@ RSpec.describe UserDecorator do
     expect(UserDecorator.new(user).formatted_join_date).to eq(time_created.strftime("%b %Y"))
   end
 
+  it 'should return the number of tales the user owns' do
+    expect(UserDecorator.new(user).owned_count).to eq(0)
+    tale = Tale.create(title: "Blahhhhh", prompt: "This is a great prompt.", owner: user)
+    Line.create(content: "Blahblahblahblahblahblahblahblahblah", tale: tale, user: user)
+    expect(UserDecorator.new(user).owned_count).to eq(1)
+  end
+
 end

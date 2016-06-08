@@ -1,4 +1,11 @@
 require 'capybara/rspec'
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+  add_filter '/lib/'
+  add_filter '/vendor/'
+end if ENV["COVERAGE"]
 Capybara.javascript_driver = :webkit
 RSpec.configure do |config|
   config.default_formatter = 'doc'
