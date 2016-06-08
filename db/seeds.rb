@@ -26,7 +26,7 @@ end
 
 user = User.all.sample
 title = "Quick"
-prompt = "Everyone is born with a disability and an ability. A test is done at birth to determine these, if they aren't already apparent. You, well, you were born with crippled legs and have the power of super speed."
+prompt = "Everyone is born with a disability and an ability. A test is done at birth to determine these, if they aren't already apparent. You, well, you were born with crippled legs and have the power of super speed. (story from: /u/Razputin7)"
 lines = []
 lines[0] = "See, what most people don't realise about super speed is that it doesn't just affect your legs. Your entire body moves fast."
 lines[1] = "People never tend to get that because you see guys like Ravel Alton sprinting at three hundred kilometres an hour down the speedway. I mean, it's more impressive visually than what I can do... but I like to think that my abilities are pretty good."
@@ -42,7 +42,7 @@ addTale(user, title, prompt, lines)
 
 user = User.all.sample
 title = "Highway Wastes"
-prompt = "When I was 16 my father pulled me out of school and shoved me in the car. His eyes didn't leave the road as he threw a gun in my lap and said, \"We\'re going to get your mother.\""
+prompt = "When I was 16 my father pulled me out of school and shoved me in the car. His eyes didn't leave the road as he threw a gun in my lap and said, \"We\'re going to get your mother.\" (story from: /u/blahgarfogar)"
 lines = []
 lines[0] = "Everybody’s running from something.<br><br>Sometimes from themselves.<br><br>And when that happens...<br><br>...you call on someone very special.<br><br>Someone who stopped running long ago.<br><br>The Highwayman."
 lines[1] = "For a long while, folks thought he was a myth. No one knew his name or where he was from. He simply...appears. Materializing out of the dust storms in a rusted ol’ speedster with a firebreathing nitro-boosted engine to match. You’ll hear him."
@@ -101,7 +101,7 @@ addTale(user, title, prompt, lines)
 
 user = User.all.sample
 title = "Origins"
-prompt = "\"Adulthood is like looking both ways before you cross the street, then getting hit by an airplane.\""
+prompt = "\"Adulthood is like looking both ways before you cross the street, then getting hit by an airplane.\" (story from: /u/psycho_alpaca)"
 lines = []
 lines[0] = "\"I\'m sorry to bring you here like this.\"<br><br>\"Not at all, my dear boy. Not at all.\"<br><br>\"But, you see, I have to know... I have to know, and you're the only one –\""
 lines[1] = "\"I get it,\" the old man interrupted me. He puffed his cheeks weakly, like it took him great effort just to breathe, and then he leaned back against the armchair and his eyes turned to the crackling of the fireplace.  \"Ask away.\""
@@ -146,7 +146,7 @@ addTale(user, title, prompt, lines)
 
 user = User.all.sample
 title = "Henry Potter and the Scientists Flask"
-prompt = "You're a 12 year-old in a world domintated by magic. A small, feeble man appears on your doorstep claiming: \"You\'re a scientist, Henry\""
+prompt = "You're a 12 year-old in a world domintated by magic. A small, feeble man appears on your doorstep claiming: \"You\'re a scientist, Henry\" (story from: /u/Luna_LoveWell)"
 lines = []
 lines[0] = "Henry and Roy shuffled into the cafeteria along with the other forty first year students who would be starting at the East Brighton Preparatory Academy. The other students, already seated at the tables, barely looked up from their meals."
 lines[1] = "It didn\'t look much like the Great Hall of Hogwarts that he had seen in Mum and Dad\'s old photos. Instead of a thousand floating candles and a stormy sky, Henry just saw dirty ceiling tiles and fluorescent lights."
@@ -181,7 +181,7 @@ addTale(user, title, prompt, lines)
 
 user = User.all.sample
 title = "Nose Cheese"
-prompt = "A man orders a \"cheese pizza with no crust\" from a local pizza delivery joint as a joke. Unbeknownst to him, that pizza joint is a drug front and he just placed an order for a kilo of cocaine."
+prompt = "A man orders a \"cheese pizza with no crust\" from a local pizza delivery joint as a joke. Unbeknownst to him, that pizza joint is a drug front and he just placed an order for a kilo of cocaine. (story from: /u/Hostiel)"
 lines = []
 lines[0] = "At the sound of the doorbell, I heaved myself from my seat.<br><br>I moved over to the door, ready to go on an angry rant about the time. Who the hell thought two in the morning was a good time to turn up at your house? They could’ve woken me up!"
 lines[1] = "They didn’t, but they could’ve, and it’s the thought that counts. I opened the door and my words died on my lips. A man in a pizza deliveryman’s costume stood there, smoking a cigarette and flanked by two burly men in tracksuits."
