@@ -72,14 +72,18 @@ $(function(){
           $("#save").hide()
         }
         else {
+          if ( !$("#save").is(":visible") ) {
+            $("#save").show()
+            $("html, body").scrollTop($(document).height());
+          }
           $('#character-count').text('(' + remainingCount + ' characters remaining)')
-          $("#save").show()
         }
       }
     });
   });
 
   $("#participate_btn").on("click", function(){
+    $("html, body").scrollTop($(document).height());
     $.ajax({
       method: "POST",
       url: "/createline",
@@ -90,6 +94,7 @@ $(function(){
   });
 
   $("#save_btn").on("click", function(e){
+    $("html, body").scrollTop($(document).height());
     var content = $('#newline')[0].innerText;
 
     $.ajax({
@@ -100,6 +105,7 @@ $(function(){
   });
 
   $("#close_btn").on("click", function(e){
+    $("html, body").scrollTop($(document).height());
     var content = $('#newline')[0].innerText;
     $.ajax({
       method: "POST",
