@@ -233,10 +233,12 @@ fieldset input, fieldset textarea {
 }
 
 .reveal .reveal-state {
-    font-size: xx-large;
-    vertical-align: middle;
     font-weight: normal;
     margin-right: .25em;
+}
+.reveal .reveal-state i {
+  font-size: small;
+  vertical-align: middle;
 }
 .active .reveal-state {
 

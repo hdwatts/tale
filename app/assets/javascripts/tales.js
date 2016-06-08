@@ -9,12 +9,8 @@ function revealDisplays() {
   $('.reveal .items').hide();
   $('.reveal .menu-header').on('click', function() {
     $(this).toggleClass("active");
-    $(this).children('h2').children().text(function(i, text){
-          return text === "+" ? "x" : "+";
-      })
-       $(this).children('h3').children().text(function(i, text){
-          return text === "+" ? "x" : "+";
-      }) 
+    $(this).children('h3').children().children().toggleClass('fa-plus')
+    $(this).children('h3').children().children().toggleClass('fa-times')
     $(this).siblings().slideToggle( "slow");
   });
 }

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   root 'application#index'
-  resources :tales
+  resources :tales, :except => [:edit]
   resources :users
   resources :sessions, :except => [:edit]
   get '/tags/:name' => 'tags#show', as: :tag
