@@ -43,7 +43,7 @@
       }
       $('#tale_content').append(data.display_line)
       showAuthors()
-      
+
       newlineField.attr("contenteditable", "false");
       newlineField.text("")
       $("#save").hide();

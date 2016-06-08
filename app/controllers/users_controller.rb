@@ -2,11 +2,12 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update]
   before_action :set_new_user, only: [:new, :create]
-  
 
   def create
     if @user.save
       TaleMailer.welcome_email(@user).deliver
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome to Tale, #{@user.first_name}! You are now logged in."
       redirect_to @user
     else
       render 'new'
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless @user == current_userxw
+    redirect_to root_path unless @user == current_user
   end
 
   def show

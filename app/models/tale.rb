@@ -12,18 +12,17 @@ class Tale < ApplicationRecord
   validates :prompt, length: { maximum: 250}
 
   def display_last_line
-    str = ""
-    index = 0
-    while str.length < 250 && !self.lines[self.lines.length - index - 1].nil? do
-      line = self.lines[self.lines.length - index - 1]
-      if line.done?
-        str = " #{line.content} #{str}"
-      end
-
-      index += 1
+    string = String.new
+    index = -1
+    until string.length >= 250 || !lines[index] do
+      string = lines[index].content + string if lines[index].done?
+      index -= 1
     end
+    lines_to_spaces(string)
+  end
 
-    str.gsub(/\<br\>/, " ").html_safe
+  def lines_to_spaces(string)
+    string.gsub(/\<br\>/, " ").html_safe
   end
 
   def owner_name
@@ -31,11 +30,11 @@ class Tale < ApplicationRecord
   end
 
   def is_current_line_user?(user)
-    self.lines.last.user == user && !awaiting_new_line?
+    lines.last.user == user && !awaiting_new_line?
   end
 
   def awaiting_new_line?
-    self.lines.last.done?
+    lines.last.done?
   end
 
   def close
