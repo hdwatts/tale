@@ -12,7 +12,7 @@ RSpec.describe UserDecorator do
   end
 
   it 'should return a correctly formatted date' do
-    expect(UserDecorator.new(user).formatted_join_date).to eq(time_created.strftime("%b %d, %Y"))
+    expect(UserDecorator.new(user).formatted_join_date).to eq(time_created.strftime("%b %Y"))
   end
 
 end

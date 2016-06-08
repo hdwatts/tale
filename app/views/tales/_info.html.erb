@@ -7,27 +7,30 @@
 </div>
 
 <div class="title">
-  <h1 class="title"><span><%= tale.title.capitalize %></span></h1><h5 class="status">
-  <% if tale.open? %>
-    <i class="fa fa-unlock-alt" aria-hidden="true"></i> Open
-  <% else %>
-    <i class="fa fa-lock" aria-hidden="true"></i> Closed
-  <% end %>
+  <h1 class="title"><span><%= tale.title.capitalize %></span></h1>
   <% if tale.owner == @current_user %>
-  <div id="edit-buttons">
-  <i class="fa fa-trash-o"></i>
-    <%= link_to " Delete", tale_path(tale), method: :delete, data: {confirm: "Are you sure you want to delete this tale?"}%></h5>
-  </div>
-<% end %>
+    <h5 id="edit-buttons">
+    <i class="fa fa-trash-o"></i>
+    <%= link_to " Delete Tale", tale_path(tale), method: :delete, data: {confirm: "Are you sure you want to delete this tale?"}%></h5>
+  <% end %>
   <h2 class="prompt"><span><%= tale.prompt %></span></h2>
 </div>
 
 <div class="meta">
+    <div class="open">
+      <h5>
+        <% if tale.open? %>
+          <i class="fa fa-unlock-alt" aria-hidden="true"></i> <small>Open
+        <% else %>
+          <i class="fa fa-lock" aria-hidden="true"></i> <small>Closed
+        <% end %></small>
+      </h5>
+    </div>
     <div class="owner">
-      <h5>Started by <%= link_to tale.owner_name, tale.owner %></h5>
+    <h5><small>Started by</small> <%= link_to tale.owner_name, tale.owner %></h5>
     </div>
     <div class="lines">
-      <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %>lines<%else%>Line<%end%></h5>
+      <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %><small>lines</small><%else%><small>Line</small><%end%></h5>
     </div>
     <div class="last-updated">
       <h5><%= link_to tale.lines.last.user.username, tale.lines.last.user %>

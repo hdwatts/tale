@@ -80,10 +80,10 @@ RSpec.describe User, type: :model do
   context 'when already created' do
     before do 
       @user = User.create!(first_name: "R", last_name: "Spec", username: "rspec", email: "r@spec.com", password: "password", password_confirmation: "password") 
-      @owned_tale = Tale.create!(owner: @user)
+      @owned_tale = Tale.create!(title: "My Title", owner: @user)
       Line.create(tale: @owned_tale, user: @user, content: "This is a really great tale.")
       @other_user = User.create!(first_name: "Bob", last_name: "Hoskins", username: "bobhoskins", email: "bobhoskins@monalisa.com", password: "password", password_confirmation: "password") 
-      @unowned_tale = Tale.create!(owner: @other_user)
+      @unowned_tale = Tale.create!(title: "My Title", owner: @other_user)
       Line.create!(tale: @unowned_tale, user: @user, content: "This is also a really great tale.")
     end
 
