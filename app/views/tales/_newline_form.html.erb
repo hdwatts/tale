@@ -11,6 +11,9 @@
     <% unless tale.awaiting_new_line? && @current_user && @current_user != @tale.lines.last.user %>
       <% participate_css = "display:none;" %>
     <% end %>
+    <% if !tale.awaiting_new_line? %>
+      <% wait_text = "Someone is currently adding to this tale. Please stand by." %>
+    <% end %>
     <% if !tale.is_current_line_user?(@current_user) %>
       <% save_css = "display:none;" %>
     <% end %>
@@ -31,7 +34,7 @@
       <div id="close" style="<%= close_css %>">
         <button id="close_btn" class="btn">End Tale</button>
       </div>
-      <span id="wait-message"></span>
+      <span id="wait-message"><%= wait_text %></span>
     </div>
   </div>
 </div>
