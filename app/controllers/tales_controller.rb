@@ -15,6 +15,7 @@ class TalesController < ApplicationController
       redirect_to @tale
     else
       @tale.errors.full_messages.each { |error| "#{error}" }
+      @tags = Tag.new
       render 'new'
     end
   end

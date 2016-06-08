@@ -40,6 +40,14 @@ RSpec.describe "TalesController" do
       click_button('Create Tale')
       expect(page).to have_content('My Title')
     end
+
+    it "Renders errors if form is not valid" do
+      sign_in
+      visit "/tales/new"
+      fill_in 'newtaletags', :with => 'my, tags'
+      click_button('Create Tale')
+      # expect(page).to have_content('cannot be blank')
+    end
   end
 
   describe "Viewing tales" do
