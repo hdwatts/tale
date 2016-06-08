@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   root 'application#index'
   resources :tales
   resources :users
-  resources :sessions
+  resources :sessions, :except => [:edit]
   get '/tags/:name' => 'tags#show', as: :tag
   get '/signup', to: 'users#new'
-  get '/welcome', to: 'users#welcome'
   post '/sessions/new', to: 'sessions#create'
   post '/updateline' => 'line#show'
   post '/createline' => 'line#create'
