@@ -3,7 +3,7 @@
   received: function(data) {
     var newlineField = $('#newline[data-tale-id="' + data.tale_id + '"]');
 
-    if ( data.tale_open == false ) {
+    if ( data.tale_open == false && $('#curr_user_id').length > 0 ) {
       location.reload()
     }
     if ( data.user_id == $('#curr_user_id').val() ) {
@@ -22,6 +22,13 @@
 
     if ( data.hide ) {
       $('#participate').hide();
+    }
+
+    if ( (data.hide || data.content != undefined) && data.done != true && data.user_id != $('#curr_user_id').val() ) {
+      $('#wait-message').text('Someone is currently adding to this tale. Please stand by.')
+    }
+    else {
+      $('#wait-message').empty()
     }
 
     if ( data.done ) {
@@ -66,10 +73,11 @@ $(function(){
       url: "/updateline",
       data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content},
       success: function(){
-        var remainingCount = 250 - $('#newline').text().trim().length
+        var remainingCount = 250 - $('#newline').text().length
         if (remainingCount < 0) {
           $('#character-count').text('You have passed the limit.')
           $("#save").hide()
+          $('#newline').css('background-color', 'rgb(212, 105, 87)')
         }
         else {
           if ( !$("#save").is(":visible") ) {
@@ -77,6 +85,7 @@ $(function(){
             $("html, body").scrollTop($(document).height());
           }
           $('#character-count').text('(' + remainingCount + ' characters remaining)')
+          $('#newline').css('background-color', 'rgb(250, 255, 189)')
         }
       }
     });
