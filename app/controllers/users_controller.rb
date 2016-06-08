@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless @user == current_user
+    redirect_to root_path unless @user == current_userxw
   end
 
   def show
@@ -38,8 +38,8 @@ private
     @user = User.find(params[:id])
   end
 
-  def set_new_user(user_params = nil)
-    @user = User.new(user_params)
+  def set_new_user
+    params[:user] ? @user = User.new(user_params) : @user = User.new
   end
 
 end
