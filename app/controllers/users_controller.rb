@@ -2,8 +2,10 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update]
   before_action :set_new_user, only: [:new, :create]
+  
 
   def create
+    debugger
     if @user.save
       TaleMailer.welcome_email(@user).deliver
       redirect_to @user

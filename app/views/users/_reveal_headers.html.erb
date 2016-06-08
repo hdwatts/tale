@@ -1,0 +1,17 @@
+<div class="menu-header">
+  <% if owner %>
+    <% if user.my_profile(current_user) %>
+      <h2><span class="reveal-state">+</span> Tales I Own</h2>
+    <% else %>
+      <h3><span class="reveal-state">+</span><%= user.username %>'s Tales</h3>
+    <% end %>
+    <span class="count"><%= user.tales_owned.count %> entries</span>
+  <% else %>
+    <% if user.my_profile(@current_user) %>
+      <h2><span class="reveal-state">+</span> Tales I've Contributed To</h2>
+    <% else %>
+      <h3><span class="reveal-state">+</span><%= user.username %>'s Contributions</h3>
+    <% end %>
+    <span class="count"><%= user.tales_contributed.count %> entries</span>
+  <% end %>
+</div>
