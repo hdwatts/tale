@@ -1,7 +1,7 @@
 <div id="tale_content">
   <% lines.each do |line| %>
   <div class="line" data-line-id="<%= line.id %>">
-    <% if line != lines.last || @tale.awaiting_new_line? %>
+    <% if line != lines.last || tale.awaiting_new_line? %>
       <%= line.display_line %>
     <% end %>
   </div>

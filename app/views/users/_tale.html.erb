@@ -1,5 +1,5 @@
 <% unless owned_by_user %>
-<b>Started By:</b> <%= link_to tale.owner.username, tale.owner %>
+<b>Started By:</b> <%= link_to tale.owner_name, tale.owner %>
 <% end %>
 <b>Prompt:</b> <p> <%= tale.prompt %></p>
 

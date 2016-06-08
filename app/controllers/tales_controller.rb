@@ -33,15 +33,12 @@ class TalesController < ApplicationController
   end
 
   def destroy
-    @tale = Tale.find(params[:id])
-    if @tale.owner == current_user
-      @tale.destroy
-      redirect_to new_session
-    end
+    @tale = current_user.tales.find(params[:id])
+    @tale.destroy
+    redirect_to new_session
   end
 
 private
-  
   def tale_params
     params.require(:tale).permit(:prompt, :title, :owner_id, lines_attributes: [:id, :content])
   end

@@ -26,6 +26,10 @@ class Tale < ApplicationRecord
     str.gsub(/\<br\>/, " ").html_safe
   end
 
+  def owner_name
+    owner.username
+  end
+
   def is_current_line_user?(user)
     self.lines.last.user == user && !awaiting_new_line?
   end

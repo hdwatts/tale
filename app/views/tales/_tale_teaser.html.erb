@@ -5,10 +5,10 @@
       <h2 class="prompt"><span><%= tale.prompt %></span></h2>
     <% end %>
   </div>
-  
+
   <div class="meta">
     <div class="owner">
-      <h5>Started by <%= link_to tale.owner.username, tale.owner.username %></h5>
+      <h5>Started by <%= link_to tale.owner_name, tale.owner %></h5>
     </div>
     <div class="lines">
       <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %>lines<%else%>Line<%end%></h5>
