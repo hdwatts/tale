@@ -8,6 +8,6 @@ class CreateTales < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add index :tales, :owner_id
+    add_index :tales, :owner_id
   end
 end
