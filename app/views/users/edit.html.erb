@@ -1,0 +1,23 @@
+<h2>Edit Your Profile</h2>
+
+<%= render 'errors', user: @user %>
+
+<%= form_for @user do |f| %>
+<fieldset>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+</fieldset>
+<fieldset>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</fieldset>
+<fieldset>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+</fieldset>
+<fieldset>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</fieldset>
+<%= f.submit "Confirm Changes", class: "btn btn-large" %>
+<% end %>
