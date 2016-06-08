@@ -12,12 +12,16 @@
   </div>
 <% end %>
 
-<div id="status">
-  <span>* <%= tale.formatted_status %></span>
-</div>
+
 
 <div class="title">
-  <h1 class="title"><span><%= tale.title.capitalize %></span></h1>
+  <h1 class="title"><span><%= tale.title.capitalize %></span></h1><h5 class="status">
+  <% if tale.open? %>
+    <i class="fa fa-unlock-alt" aria-hidden="true"></i> Open
+  <% else %>
+    <i class="fa fa-lock" aria-hidden="true"></i> Closed
+  <% end %>
+</h5>
   <h2 class="prompt"><span><%= tale.prompt %></span></h2>
 </div>
 
