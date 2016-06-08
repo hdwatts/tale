@@ -20,10 +20,6 @@ class TalesController < ApplicationController
     end
   end
 
-  def edit
-    @tags = @tale.tags
-  end
-
   def index
     @tales = Tale.all
     @random_tale = @tales.sample
