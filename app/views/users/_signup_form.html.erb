@@ -4,26 +4,26 @@
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
 </fieldset>
-<fieldset>  
-  <%= f.label :last_name %> 
+<fieldset>
+  <%= f.label :last_name %>
   <%= f.text_field :last_name %>
 </fieldset>
-<fieldset>   
+<fieldset>
   <%= f.label :username %>
   <%= f.text_field :username %>
 </fieldset>
-<fieldset>   
+<fieldset>
   <%= f.label :email %>
   <%= f.text_field :email %>
 </fieldset>
-<fieldset>   
+<fieldset>
   <%= f.label :password %>
   <%= f.password_field :password %>
 </fieldset>
-<fieldset>   
+<fieldset>
   <%= f.label 'Confirm Password' %>
   <%= f.password_field :password_confirmation %>
-</fieldset>  
+</fieldset>
   <%= f.submit "Sign Up", class: "btn btn-large" %>
   <div class="signup-copy">Already have an account? <%= link_to "Sign in here.", signup_path %></div>
  <% end %>

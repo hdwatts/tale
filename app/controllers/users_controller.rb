@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if @user.save
       TaleMailer.welcome_email(@user).deliver
       redirect_to @user
-    else 
+    else
       render 'new'
     end
   end
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = UserDecorator.new(User.find(params[:id]))
   end
 
-  
+
 private
 
   def user_params
