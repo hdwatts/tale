@@ -78,7 +78,6 @@ $(function(){
             $("html, body").scrollTop($(document).height());
           }
           $('#character-count').text('(' + remainingCount + ' characters remaining)')
-          $("#newline").addClass('exceededLimit')
           $('#newline').css('background-color', 'rgb(250, 255, 189)')
         }
       }
