@@ -10,7 +10,11 @@
   <div id="tales" class="index">
     <div id="user-tales" class="reveal">
       <div class="menu-header">
-        <h2><span class="reveal-state">+</span> Tales I Own</h2>
+        <% if @current_user.id == @user.id %>
+          <h2><span class="reveal-state">+</span> Tales I Own</h2>
+        <% else %>
+          <h2><span class="reveal-state">+</span> Tales <%= @user.username %> Owns</h2>
+        <% end %>
         <span class="count"><%= @user.tales_owned.count %> entries</span>
       </div>
       <div class="items">
