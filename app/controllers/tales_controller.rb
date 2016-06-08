@@ -11,8 +11,7 @@ class TalesController < ApplicationController
   def create
     @tale = TaleCreator.create_tale(tale_params, current_user)
     if @tale.save
-      the_tale = @tale
-      @tag = TagCreator.create_tags(tag_params, the_tale)
+      TagCreator.create_tags(tag_params, @tale)
       redirect_to @tale
     else
       @tale.errors.full_messages.each { |error| "#{error}" }
@@ -30,7 +29,7 @@ class TalesController < ApplicationController
 
   def index
     @tales = Tale.all
-    @random_tale = Tale.all.sample
+    @random_tale = @tales.sample
   end
 
   def destroy
