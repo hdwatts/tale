@@ -5,10 +5,10 @@
     </div>
     <nav id="main-menu">
       <% if @current_user %>
-        <%= link_to "My Profile", user_path(@current_user) %>
-        <%= link_to "New Tale", new_tale_path %>
-        <%= link_to "All Tales", tales_path %>
-        <%= link_to "Sign Out", session_path(session), method: :delete %>
+        <%= link_to "Me", user_path(@current_user) %>
+        <%= link_to "New", new_tale_path %>
+        <%= link_to "Browse", tales_path %>
+        <%= link_to "Log Out", session_path(session), method: :delete %>
       <% else %>
         <%= link_to "Sign In", new_session_path %>
         <%= link_to "Sign Up", signup_path %>

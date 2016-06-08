@@ -6,18 +6,19 @@
   </h4>
 </div>
 
-<% if tale.owner == @current_user %>
+<div class="title">
+  <h1 class="title"><span><%= tale.title.capitalize %></span></h1><h5 class="status">
+  <% if tale.open? %>
+    <i class="fa fa-unlock-alt" aria-hidden="true"></i> Open
+  <% else %>
+    <i class="fa fa-lock" aria-hidden="true"></i> Closed
+  <% end %>
+  <% if tale.owner == @current_user %>
   <div id="edit-buttons">
-    <%= link_to "Delete", tale_path(tale), method: :delete, class: 'btn'%>
+  <i class="fa fa-trash-o"></i>
+    <%= link_to " Delete", tale_path(tale), method: :delete, data: {confirm: "Are you sure you want to delete this tale?"}%></h5>
   </div>
 <% end %>
-
-<div id="status">
-  <span>* <%= tale.formatted_status %></span>
-</div>
-
-<div class="title">
-  <h1 class="title"><span><%= tale.title.capitalize %></span></h1>
   <h2 class="prompt"><span><%= tale.prompt %></span></h2>
 </div>
 

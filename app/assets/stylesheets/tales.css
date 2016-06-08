@@ -1,3 +1,6 @@
+.tale .title {
+  position: relative;
+}
 .tale .title h1 {
   display: inherit;
   font-weight: 600;
@@ -41,18 +44,26 @@
   position: fixed;
   top: 0;
   text-align: center;
-  max-width: 600px;
   width: 100%;
-  background-color: rgba(255,255,255,.75);
+  background-color: rgba(255,255,255,.65);
   z-index: 100;
 }
 .tale.show #title h4 {
-  margin-top: .75em;
-  background-color: #fff;
-  display: inline-block;
+    max-width: 600px;
+    background-color: rgba(255,255,255,.65);
+    z-index: 200;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0 auto;
 }
 .tale.show #status span {
     background-color: rgba(250, 255, 189, 1);
+}
+
+.status {
+  position: absolute; 
+  right: 0;
+  top: 0;
 }
 
 .tale.show .line {
