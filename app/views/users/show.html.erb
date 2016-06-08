@@ -3,7 +3,7 @@
   <div class="profile">
     <h1><i class="fa fa-user" aria-hidden="true"></i> <%= @user.username %></h1>
     <div class="meta">
-      <%= render 'info' %>
+      <%= render 'info', user: @user %>
     </div>
   </div>
 
