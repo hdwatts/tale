@@ -14,8 +14,9 @@ class Tale < ApplicationRecord
   def display_last_line
     string = String.new
     index = -1
-    until string.length >= 250 || !lines[index] do
-      string = lines[index].content + string if lines[index].done?
+    sorted_lines = lines.sort {|a,b| a.id <=> b.id}
+    until string.length >= 250 || !sorted_lines[index] do
+      string = sorted_lines[index].content + string if sorted_lines[index].done?
       index -= 1
     end
     lines_to_spaces(string)
