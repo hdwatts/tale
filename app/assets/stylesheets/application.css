@@ -178,6 +178,11 @@ form fieldset textarea {
   min-width: 66%;
   display: inline-block;
   float: right;
+  margin: .5em 0;
+}
+
+form fieldset {
+  position: relative;
 }
 
 form .btn {

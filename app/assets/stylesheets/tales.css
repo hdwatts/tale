@@ -100,3 +100,9 @@
   height: 2em;
   text-align: right;
 }
+
+.new-tale-count {
+  position: absolute;
+  right: 0;
+  bottom: -1.5em;
+}

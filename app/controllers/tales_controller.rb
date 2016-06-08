@@ -1,7 +1,7 @@
 class TalesController < ApplicationController
 
   before_action :set_tale, only: [:show, :edit]
-
+  before_action :require_login, except: [:show, :index]
   def new
     @tale = Tale.new
     @line = @tale.lines.build
@@ -50,6 +50,10 @@ private
 
   def set_tale
     @tale = Tale.find(params[:id])
+  end
+
+  def require_login
+    redirect_to new_session_path, notice: "You have to log in first." unless current_user
   end
 
 end

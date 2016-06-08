@@ -67,7 +67,6 @@
 $(function(){
   $('#newline').on("keyup", function(){
     var content = $(this)[0].innerText;
-
     $.ajax({
       method: "POST",
       url: "/updateline",

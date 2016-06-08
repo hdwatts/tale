@@ -4,19 +4,22 @@
 
   <fieldset>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'newtale', :id => 'newtaletitle' %>
+    <div id="character-count" class="new-tale-count"></div>
   </fieldset>
 
   <fieldset>
     <%= f.label :prompt %>
-    <%= f.text_area :prompt, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250 %>
+    <%= f.text_area :prompt, :cols => 34, :rows => 5, :class => 'newtale', :id => 'newtaleprompt' %>
+    <div id="character-count" class="new-tale-count"></div>
   </fieldset>
 
   <fieldset>
     <%= f.fields_for :lines do |ff| %>
       <%= ff.label "The first line" %>
-      <%= ff.text_area :content, :cols => 34, :rows => 5, :onkeyup => "checkMaxlength(this);", :maxlength => 250  %>
+      <%= ff.text_area :content, :cols => 34, :rows => 5, :maxlength => 250, :class => 'newtale', :id => 'newtaleline' %>
     <% end %>
+    <div id="character-count" class="new-tale-count"></div>
   </fieldset>
 
   <fieldset>
