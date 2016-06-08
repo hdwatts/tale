@@ -36,7 +36,7 @@ class TalesController < ApplicationController
   def destroy
     @tale = current_user.tales.find(params[:id])
     @tale.destroy
-    redirect_to new_session
+    redirect_to tales_path, notice: "Your tale has been deleted."
   end
 
 private
