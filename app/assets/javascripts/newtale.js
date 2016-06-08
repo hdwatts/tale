@@ -1,5 +1,10 @@
-$(function(){$('.newtale').on("keyup", function(){
+$(function(){$('.newtale').on("keyup", function(e){
+  if (this.id === "newtaletags") {
+    $(this).siblings().last().text('Please separate tags with commas.')
+  }
+  else {
   setRemainingCount(this)
+}
 })
 })
 
