@@ -1,5 +1,7 @@
 class TalesController < ApplicationController
 
+  before_action :set_tale, only: [:show, :edit]
+
   def new
     @tale = Tale.new
     @line = @tale.lines.build
@@ -19,11 +21,10 @@ class TalesController < ApplicationController
   end
 
   def show
-    @tale = TaleDecorator.new(Tale.find(params[:id]))
+    @tale = TaleDecorator.new(@tale)
   end
 
   def edit
-    @tale = Tale.find(params[:id])
     @tags = @tale.tags
   end
 
@@ -45,6 +46,10 @@ private
 
   def tag_params
    params[:tale][:tag][:name].split(",")
+  end
+
+  def set_tale
+    @tale = Tale.find(params[:id])
   end
 
 end
