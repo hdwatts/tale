@@ -143,7 +143,13 @@ nav a {
 }
 
 /* FORMS */
-
+#flash_messages {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 form {
   width: 100%;
 }
