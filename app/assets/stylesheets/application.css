@@ -19,15 +19,17 @@
 
  /* LAYOUTS */
 body {
-  margin: 2em 0 0 0;
+  margin: 0;
   position: relative;
+  min-height: 100vh;
+  padding-bottom: 5em;
  }
 
 main {
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 1em;
+  padding-top: 4em;
  }
 
 
@@ -79,6 +81,12 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+footer small {
+  border-top: 1px solid #eee;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 /* FONTS */
