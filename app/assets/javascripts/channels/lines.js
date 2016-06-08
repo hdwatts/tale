@@ -3,7 +3,7 @@
   received: function(data) {
     var newlineField = $('#newline[data-tale-id="' + data.tale_id + '"]');
 
-    if ( data.tale_open == false ) {
+    if ( data.tale_open == false && $('#curr_user_id').length > 0 ) {
       location.reload()
     }
     if ( data.user_id == $('#curr_user_id').val() ) {
