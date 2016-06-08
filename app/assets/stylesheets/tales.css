@@ -84,7 +84,9 @@
   padding-right: 12em;
   margin-right: -12em;
   }  
-
+.tale.show .line.active h3 {
+  background-color: #f6f6f6;
+}
 .tale.show .line .author {
   position: absolute;
   left: 620px;
