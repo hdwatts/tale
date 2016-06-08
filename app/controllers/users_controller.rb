@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create
     if @user.save
       TaleMailer.welcome_email(@user).deliver
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome to Tale, #{@user.first_name}! You are now logged in."
       redirect_to @user
     else
       render 'new'
