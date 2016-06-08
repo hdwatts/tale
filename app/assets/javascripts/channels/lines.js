@@ -24,6 +24,13 @@
       $('#participate').hide();
     }
 
+    if ( data.hide && data.user_id != $('#curr_user_id').val() ) {
+      $('#wait-message').text('Someone is currently adding to this tale. Please stand by.')
+    }
+    else {
+      $('#wait-message').empty()
+    }
+
     if ( data.done ) {
       if ( newlineField.parent("#outerspan").length > 0 ) {
         var parentElem = newlineField.parent("#outerspan");
