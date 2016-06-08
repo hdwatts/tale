@@ -66,10 +66,11 @@ $(function(){
       url: "/updateline",
       data: {id: $("#curr_user_id").val(), tale: $("#tale_id").val(), content: content},
       success: function(){
-        var remainingCount = 250 - $('#newline').text().trim().length
+        var remainingCount = 250 - $('#newline').text().length
         if (remainingCount < 0) {
           $('#character-count').text('You have passed the limit.')
           $("#save").hide()
+          $('#newline').css('background-color', 'rgb(212, 105, 87)')
         }
         else {
           if ( !$("#save").is(":visible") ) {
@@ -77,6 +78,8 @@ $(function(){
             $("html, body").scrollTop($(document).height());
           }
           $('#character-count').text('(' + remainingCount + ' characters remaining)')
+          $("#newline").addClass('exceededLimit')
+          $('#newline').css('background-color', 'rgb(250, 255, 189)')
         }
       }
     });

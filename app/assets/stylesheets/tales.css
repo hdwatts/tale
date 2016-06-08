@@ -72,6 +72,10 @@
 .tale.show .line.active .author {
   display: block;
  } 
+
+.exceededlimit {
+  background-color: rgba(0, 82, 79, .75);]\ 
+}
 /* TALE TEASER VIEW */
 
 .tale.teaser .title {
