@@ -16,13 +16,13 @@ RSpec.describe "Feature" do
     it "can not participate in tale where he is the last line author" do
       sign_in
       visit "/tales/#{@tale.id}"
-      expect(page).not_to have_content 'Participate in this Story'
+      expect(page).not_to have_content 'Participate in this Tale'
     end
 
     it "can participate in tale where he is not the last line author" do
       sign_in
       visit "/tales/#{@tale2.id}"
-      expect(page).to have_content 'Participate in this Story'
+      expect(page).to have_content 'Participate in this Tale'
     end
 
   end
