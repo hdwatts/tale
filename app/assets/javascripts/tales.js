@@ -24,6 +24,9 @@ function revealDisplays() {
     $(this).children('h2').children().text(function(i, text){
           return text === "+" ? "x" : "+";
       })
+       $(this).children('h3').children().text(function(i, text){
+          return text === "+" ? "x" : "+";
+      }) 
     $(this).siblings().slideToggle( "slow");
   });
 }
