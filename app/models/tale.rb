@@ -9,7 +9,7 @@ class Tale < ApplicationRecord
 
   validates_presence_of :title
   validates :title, length: { maximum: 65}
-
+  validates :prompt, length: { maximum: 250}
 
   def display_last_line
     str = ""
