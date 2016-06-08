@@ -11,7 +11,7 @@
     <% unless tale.awaiting_new_line? && @current_user && @current_user != @tale.lines.last.user %>
       <% participate_css = "display:none;" %>
     <% end %>
-    <% if !tale.awaiting_new_line? %>
+    <% if !tale.awaiting_new_line? && !tale.is_current_line_user?(@current_user)%>
       <% wait_text = "Someone is currently adding to this tale. Please stand by." %>
     <% end %>
     <% if !tale.is_current_line_user?(@current_user) %>

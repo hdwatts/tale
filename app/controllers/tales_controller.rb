@@ -18,7 +18,7 @@ class TalesController < ApplicationController
       render 'new'
     end
   end
-  
+
   def edit
     @tags = @tale.tags
   end
