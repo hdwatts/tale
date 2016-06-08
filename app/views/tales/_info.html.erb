@@ -6,7 +6,7 @@
   </h4>
 </div>
 
-<% if tale.owner == current_user %>
+<% if tale.owner == @current_user %>
   <div id="edit-buttons">
     <%= link_to "Delete", tale_path(tale), method: :delete, class: 'btn'%>
   </div>
