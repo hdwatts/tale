@@ -27,16 +27,19 @@ RSpec.describe "TalesController" do
     it "Form has ability to initialize tags" do
       sign_in
       visit "/tales/new"
-      expect(page).to have_css('#tale_tag_name')
+      expect(page).to have_css('#newtaletags')
     end
     
-    # it "Saves and displays tales after creation" do
-    #   sign_in
-    #   visit "/tales/new"
-    #    #find('input#newtaletitle').set('My Title')
-    #    fill_in 'newtaletitle', :with => 'some text'
-    #   # expect(page).to have_content(tale3.title)
-    # end
+    it "Saves and displays tales after creation" do
+      sign_in
+      visit "/tales/new"
+      fill_in 'newtaletitle', :with => 'My Title'
+      fill_in 'newtaleprompt', :with => 'This is the prompt it is longer'
+      fill_in 'newtaleline', :with => 'This is the line it is the first line'
+      fill_in 'newtaletags', :with => 'my, tags'
+      click_button('Create Tale')
+      expect(page).to have_content('My Title')
+    end
   end
 
   describe "Viewing tales" do
