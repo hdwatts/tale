@@ -25,7 +25,7 @@ body {
  }
 
 main {
-  max-width: 600px;
+  max-width: 650px;
   width: 100%;
   margin: 0 auto;
   padding-top: 4em;
@@ -263,4 +263,47 @@ fieldset input, fieldset textarea {
      z-index: 200; 
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+
+@media screen and (max-width: 850px) {
+  header {
+    background-color: rgba(255,255,255,.85)
+  }
+  #tag-nav {
+    position: relative;
+    padding-bottom: 4em;
+  }
+  #tag-nav ul {
+    padding-left: 0;
+  }
+  #tag-nav li {
+    display: inline-block;
+    padding: .25em; 
+  }
+
+  .tale.show #title {
+    visibility: hidden;
+  }
+  .tale.show .line .author {
+    top: -1em;
+    right: 0;
+    left: inherit;
+  }
+  .tale.show .line h3 {
+    padding-top: 1em;
+  }
+  .tale.show .line {
+    padding-right: 0;
+    margin-right: 0;
+    position: relative;
+  }
+  .tale .meta {
+    flex-wrap: wrap;
+    margin-top: 1em;
+  }
+  .tale .meta h5 {
+    margin-top: 0;
+  }
+
 }
