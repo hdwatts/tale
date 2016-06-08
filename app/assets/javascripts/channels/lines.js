@@ -1,8 +1,8 @@
-App.messages = App.cable.subscriptions.create('LineChannel', {  
+ App.messages = App.cable.subscriptions.create('LineChannel', {
 
   received: function(data) {
     var newlineField = $('#newline[data-tale-id="' + data.tale_id + '"]');
-   
+
     if ( data.tale_open == false ) {
       location.reload()
     }
@@ -74,7 +74,7 @@ $(function(){
         else {
           $('#character-count').text('(' + remainingCount + ' characters remaining)')
           $("#save").show()
-        }  
+        }
       }
     });
   });
