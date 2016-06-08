@@ -78,7 +78,7 @@ def sign_in
   visit '/sessions/new'
   fill_in('user_username', with: "hdwatts")
   fill_in('user_password', with: "password1")
-  click_button("Submit")
+  click_button("Sign In")
 end
 
 
