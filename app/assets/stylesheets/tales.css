@@ -1,5 +1,5 @@
 .tale .title {
-  position: relative;
+/*  position: relative;*/
 }
 .tale .title h1 {
   display: inherit;
@@ -7,9 +7,20 @@
   padding-right: .5em;
 }
 
+.tale.show h5#edit-buttons {
+  position: fixed;
+    top: 4em;
+    right: 2.5em;
+    margin-top: 0.25em;
+}
+.tale.show h5#edit-buttons a {
+  text-decoration: none;
+}
+
 .tale h2.prompt {
   font-weight: 400;
   display: inherit;
+  font-size: 1.8em;
 }
 
 .tale .meta {
@@ -76,7 +87,7 @@
 
 .tale.show .line .author {
   position: absolute;
-  left: 585px;
+  left: 620px;
   top: 0;
   display: none;
   }
