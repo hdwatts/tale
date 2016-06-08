@@ -24,7 +24,7 @@
       $('#participate').hide();
     }
 
-    if ( data.hide && data.user_id != $('#curr_user_id').val() ) {
+    if ( (data.hide || data.content != undefined) && data.done != true && data.user_id != $('#curr_user_id').val() ) {
       $('#wait-message').text('Someone is currently adding to this tale. Please stand by.')
     }
     else {
