@@ -1,12 +1,13 @@
 <div id="user show">
-
+  
   <div class="profile">
-    <h1><i class="fa fa-user" aria-hidden="true"></i> <%= @user.username %></h1>
+    <h1><i class="fa fa-user" aria-hidden="true"></i> <%= @user.username %> 
+    <font size="3"><%= link_to "(edit)", edit_user_path(@user) if @current_user.id == @user.id %></font>
+    </h1>
     <div class="meta">
       <%= render 'info', user: @user %>
     </div>
   </div>
-
   <div id="tales" class="index">
     <div id="user-tales" class="reveal">
       <div class="menu-header">
@@ -26,8 +27,11 @@
 
     <div id="user-contributions" class="reveal">
       <div class="menu-header">
+        <% if @current_user.id == @user.id %>
         <h2><span class="reveal-state">+</span> Tales I've Contributed To</h2>
+        <% else %>
         <span class="count"><%= @user.tales_contributed.count %> entries</span>
+        <% end %>
       </div>
       <div class="items">
       <% @user.tales_contributed.each do |tale| %>
