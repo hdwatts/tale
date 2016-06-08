@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   
 
   def create
-    debugger
     if @user.save
       TaleMailer.welcome_email(@user).deliver
       redirect_to @user
