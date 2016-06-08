@@ -18,11 +18,7 @@ class TalesController < ApplicationController
       render 'new'
     end
   end
-
-  def show
-    @tale = TaleDecorator.new(@tale)
-  end
-
+  
   def edit
     @tags = @tale.tags
   end

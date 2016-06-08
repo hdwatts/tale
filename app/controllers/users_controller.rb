@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless @user == current_userxw
+    redirect_to root_path unless @user == current_user
   end
 
   def show
