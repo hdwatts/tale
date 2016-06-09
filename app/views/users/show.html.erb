@@ -4,7 +4,7 @@
       <%= render 'info', user: @user %>
     </div>
     <% if @user.my_profile(@current_user) %>
-      <h5 class="edit"><%= link_to "edit", edit_user_path(@user) %></h5>
+      <h5 class="edit"><%= link_to "Edit profile", edit_user_path(@user) %></h5>
     <% end %>
   </div>
 

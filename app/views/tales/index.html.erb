@@ -27,12 +27,5 @@
 <%= button_to "Feeling spontaneous?", @random_tale, class: "btn", method: "get" %>
 
   </div>
-  <div id="tag-nav">
-  <ul>
-    <% Tag.all.each do |tag| %>
-      <li>
-      <small><%= link_to "##{tag.name} (#{tag.tales.count})", tag_path(tag.name) %></small>
-      </li>
-    <% end %>
-    </ul>
-  </div>
+  
+  <%= render partial: "tags/tags_nav", locals: {tales: @tales} %>

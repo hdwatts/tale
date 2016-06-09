@@ -253,6 +253,7 @@ fieldset input, fieldset textarea {
 #tag-nav ul {
   list-style: none;
   line-height: 1.65em;
+  padding-left: 2em;
 }
 
 #title {
@@ -293,8 +294,8 @@ fieldset input, fieldset textarea {
     visibility: hidden;
   }
   .tale.show .line .author {
-    top: -1em;
-    right: 0;
+    top: -.25em;
+    right: .5em;
     left: inherit;
   }
   .tale.show .line h3 {
