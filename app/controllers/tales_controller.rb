@@ -1,7 +1,7 @@
 class TalesController < ApplicationController
-
   before_action :set_tale, only: [:show, :edit]
   before_action :require_login, except: [:show, :index]
+  
   def new
     @tale = Tale.new
     @line = @tale.lines.build

@@ -1,9 +1,19 @@
 <% tales.each do |tale| %>
+<%= link_to tale do %>
 <div class="item">
-  <h1><%= link_to tale.title, tale %></h1>
+    <h1><span><%= tale.title %></span></h1>
+  <div class="meta">
+    <div class="lines">
+        <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %><small>lines</small><%else%><small>Line</small><%end%></h5>
+      </div>
+    <div class="author"><h5><%= tale.lines.last.user.username %> <small>updated <%= time_ago_in_words(tale.lines.last.created_at) %> ago</small></div>
+</div>
   <div class="index-text">
     <div class="index-gradient"></div>
     <span id="outerspan"> <%= tale.display_last_line %> <span id="newline" data-tale-id="<%= tale.id %>"></span></span>
   </div>
 </div>
 <% end %>
+<% end %>
+
+

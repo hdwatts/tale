@@ -1,5 +1,4 @@
-<h1><%= @user.username %></h1>
-<ul>
-<li><b>Name:</b> <%= user.full_name %> </li>
-<li><b>Joined:</b> <%= user.formatted_join_date %></li>
-</ul>
+<h1><%= @user.username %> <small>since <%= user.formatted_join_date %></small></h1>
+<% if @user.my_profile(@current_user) %>
+  <h5 class="edit"><%= link_to "Edit profile", edit_user_path(@user) %></h5>  
+<% end %>
