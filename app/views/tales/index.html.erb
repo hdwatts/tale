@@ -14,7 +14,8 @@
 
  <div id="closed-tales" class="reveal">
       <div class="menu-header">
-        <h2><span class="reveal-state">+</span> Closed Tales </h2><span class="count"><%= Tale.closed_tales.count %> entries</span>
+        <h2><span class="reveal-state">+</span> Closed Tales </h2>
+        <span class="count"><%= Tale.closed_tales.count %> entries</span>
       </div>
       <div class="items">
 <% Tale.closed_tales.each do |tale| %>

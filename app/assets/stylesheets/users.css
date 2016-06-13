@@ -1,10 +1,14 @@
 .user.show .profile {
   position: relative;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
+}
+.user.show h1 > small {
+  font-size: small;
 }
 
 .user.show .edit {
   position: absolute;
   right: 0;
   top: 0;
+  margin-top: 1.25em;
 }
