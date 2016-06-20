@@ -1,6 +1,6 @@
 <div id="tale_content">
   <% lines.each do |line| %>
-    <% if line != lines.last || line.tale.awaiting_new_line? %>
+    <% if line != lines.sort.last || line.tale.awaiting_new_line? %>
       <%= line.display_line %>
     <% end %>
   <% end %>

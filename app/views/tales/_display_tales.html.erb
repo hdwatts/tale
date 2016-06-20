@@ -6,7 +6,7 @@
     <div class="lines">
         <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %><small>lines</small><%else%><small>Line</small><%end%></h5>
       </div>
-    <div class="author"><h5><%= tale.lines.last.user.username %> <small>updated <%= time_ago_in_words(tale.lines.last.created_at) %> ago</small></div>
+    <div class="author"><h5><%= tale.lines.sort.last.user.username %> <small>updated <%= time_ago_in_words(tale.lines.sort.last.created_at) %> ago</small></div>
 </div>
   <div class="index-text">
     <div class="index-gradient"></div>

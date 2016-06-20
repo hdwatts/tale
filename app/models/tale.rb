@@ -31,11 +31,11 @@ class Tale < ApplicationRecord
   end
 
   def is_current_line_user?(user)
-    lines.last.user == user && !awaiting_new_line?
+    lines.sort.last.user == user && !awaiting_new_line?
   end
 
   def awaiting_new_line?
-    lines.last.done?
+    lines.sort.last.done?
   end
 
   def close

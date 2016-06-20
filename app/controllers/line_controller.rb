@@ -38,7 +38,7 @@ class LineController < ApplicationController
   end
 
   def set_line
-    @line = @tale.lines.last
+    @line = @tale.lines.sort.last
   end
 
   def invalid_new_line?

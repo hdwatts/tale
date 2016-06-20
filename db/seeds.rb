@@ -3,7 +3,7 @@ def addTale(user, title, prompt, lines)
   t.save!
   lines.each do |line|
     Line.create(user: user, tale: t, content: line, done: true)
-    user = User.all.sample until user && user != t.lines.last.user
+    user = User.all.sample until user && user != t.lines.sort.last.user
   end
 end
 

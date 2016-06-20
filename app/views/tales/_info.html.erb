@@ -33,8 +33,8 @@
       <h5><%= tale.lines.count %> <%if tale.lines.count > 1 || tale.lines.count == 0 %><small>lines</small><%else%><small>Line</small><%end%></h5>
     </div>
     <div class="last-updated">
-      <h5><%= link_to tale.lines.last.user.username, tale.lines.last.user %>
-      <small>updated <%= time_ago_in_words(tale.lines.last.created_at) %> ago</small></h5>
+      <h5><%= link_to tale.lines.sort.last.user.username, tale.lines.sort.last.user %>
+      <small>updated <%= time_ago_in_words(tale.lines.sort.last.created_at) %> ago</small></h5>
     </div>
   </div>
 
