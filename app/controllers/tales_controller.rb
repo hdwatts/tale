@@ -1,7 +1,7 @@
 class TalesController < ApplicationController
-
   before_action :set_tale, only: [:show, :edit]
   before_action :require_login, except: [:show, :index]
+  
   def new
     @tale = Tale.new
     @line = @tale.lines.build
@@ -15,12 +15,9 @@ class TalesController < ApplicationController
       redirect_to @tale
     else
       @tale.errors.full_messages.each { |error| "#{error}" }
+      @tags = Tag.new
       render 'new'
     end
-  end
-
-  def edit
-    @tags = @tale.tags
   end
 
   def index

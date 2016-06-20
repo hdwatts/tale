@@ -20,9 +20,9 @@ RSpec.describe Tale, type: :model do
 
     it 'displays the new tale with prompt, owner name and the first line' do
       visit "/tales/#{tale.id}"
-      page.should have_content('Now I am telling a story')
-      page.should have_content('the first line')
-      page.should have_content('rspec')
+      expect(page).to have_content('Now I am telling a story')
+      expect(page).to have_content('the first line')
+      expect(page).to have_content('rspec')
     end
 
     it 'can close a tale' do

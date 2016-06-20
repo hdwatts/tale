@@ -1,7 +1,11 @@
 $(function() {
+  $('#index-tales').parent().parent().css('max-width','100%')
+  $('.tags.show').parent().parent().css('max-width','80%')
+  randomGrid()
   revealDisplays()
   showAuthors()
   showTitles()
+
 })
 
 function revealDisplays() {
@@ -22,6 +26,13 @@ function showAuthors() {
   $( ".tale.show .line").mouseout(function() {
     $( this ).removeClass('active');
   });
+  
+  $('#index-tales .item').hover(function(){
+    $(this).toggleClass('active')
+    $(this).children('.index-text').children('.index-gradient').fadeOut()
+    $(this).children('.meta').children('.author').fadeIn()
+    })
+     
 }
 
 function showTitles() {

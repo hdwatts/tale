@@ -1,20 +1,7 @@
-.tale .title {
-/*  position: relative;*/
-}
 .tale .title h1 {
   display: inherit;
   font-weight: 600;
   padding-right: .5em;
-}
-
-.tale.show h5#edit-buttons {
-  position: fixed;
-    top: 4em;
-    right: 2.5em;
-    margin-top: 0.25em;
-}
-.tale.show h5#edit-buttons a {
-  text-decoration: none;
 }
 
 .tale h2.prompt {
@@ -67,14 +54,15 @@
     padding-bottom: 1em;
     margin: 0 auto;
 }
-.tale.show #status span {
-    background-color: rgba(250, 255, 189, 1);
-}
 
-.status {
-  position: absolute; 
-  right: 0;
-  top: 0;
+.tale.show h5#edit-buttons {
+  position: fixed;
+  top: 4em;
+  right: 2.5em;
+  margin-top: 0.25em;
+}
+.tale.show h5#edit-buttons a {
+  text-decoration: none;
 }
 
 .tale.show .line {
@@ -93,6 +81,9 @@
   top: 0;
   display: none;
   }
+ .tale.show .line .author h5 {
+  margin-top: 0;
+ } 
 .tale.show .line.active .author {
   display: block;
  } 
@@ -124,4 +115,38 @@
   position: absolute;
   right: 0;
   bottom: -1.5em;
+}
+
+#index-tales .item {
+  padding: 2em;
+  position: relative;
+  min-width: 280px;
+  font-size: 90%;
+}
+#index-tales small {
+  font-weight: 300;
+}
+#index-tales .item .meta {
+  opacity: 0;
+  position: absolute;
+  top: -.5em;
+  right: 1.5em;
+  display: flex;
+}
+#index-tales .item .meta div {
+  margin-left: 1em;
+}
+#index-tales .item h1 {
+  margin-top: 0;
+  margin-right: 1em;
+}
+#index-tales .item.active {
+  background-color: #f6f6f6;
+}
+#index-tales .item.active .meta {
+  opacity: 1;
+}
+
+#index-tales a:hover, #index-tales a:active {
+  background-color: #fff;
 }

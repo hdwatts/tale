@@ -1,0 +1,11 @@
+<div id="tag-nav">
+  <ul>
+    <% Tag.all.each do |tag| %>
+      <% if tag.tales.count > 0 %>
+        <li>
+          <small><%= link_to "##{tag.name} (#{tag.tales.count})", tag_path(tag.name) %></small>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
