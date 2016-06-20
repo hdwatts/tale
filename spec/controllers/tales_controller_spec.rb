@@ -42,6 +42,18 @@ RSpec.describe "TalesController" do
     end
   end
 
+  describe "Deleting talse" do
+    it "Can delete a tale" do
+      sign_in
+      visit "/tales/#{@tale.id}"
+      click_link("Delete Tale")
+      page.accept_alert do
+        click_button "OK"
+      end
+      expect(page).to have_content "Your tale has been deleted"
+    end
+  end
+
   describe "Viewing tales" do
     it "Index displays all tales" do
       visit "/tales/"
