@@ -8,7 +8,7 @@
 
     <div id="character-count">
     </div>
-    <% if !tale.awaiting_new_line? || (@current_user && @current_user != (@tale.lines.lines.sort {|a,b| a.id <=> b.id}).last.user) %>
+    <% if !tale.awaiting_new_line? || (@current_user && @current_user != (@tale.lines.sort {|a,b| a.id <=> b.id}).last.user) %>
       <% participate_css = "display:none;" %>
     <% end %>
     <% if !tale.awaiting_new_line? && !tale.is_current_line_user?(@current_user)%>
