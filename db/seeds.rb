@@ -2,9 +2,13 @@ def addTale(user, title, prompt, lines)
   t = Tale.create(title: title, prompt: prompt, owner: user)
   t.save!
   lines.each do |line|
-    Line.create(user: user, tale: t, content: line, done: true)
+    l = Line.create(user: user, tale: t, content: line, done: true)
     user = User.all.sample until user && user != t.lines.sort.last.user
   end
+  t.save!
+  l = Line.where(tale: t).sort.last
+  l.done = false
+  l.save!
 end
 
 dean = User.create(first_name: "Dean", last_name: "Watts", username: "hdwatts", email: "dean@tales.com", password: "password1" )

@@ -1,7 +1,7 @@
 <div class="tale show">
   <%= render 'info', tale: @tale %>
 
-  <%= render 'content', lines: @tale.lines.sort {|a,b| a.id <=> b.id} %>
+  <%= render 'content', lines: @tale.lines.sort %>
 
   <%= render 'newline_form', tale: @tale %>
 </div>
