@@ -69,7 +69,7 @@ Rails.application.configure do
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
-config.action_mailer.default_url_options = { :host => 'fathomless-taiga-18220.herokuapp.com' }
+config.action_mailer.default_url_options = { :host => 'open-tale.herokuapp.com' }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -89,8 +89,8 @@ config.action_mailer.default_url_options = { :host => 'fathomless-taiga-18220.he
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   #ACTION CABLE CONFIG
-  config.web_socket_server_url = "wss://fathomless-taiga-18220.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://fathomless-taiga-18220.herokuapp.com', 'http://fathomless-taiga-18220.herokuapp.com']
+  config.web_socket_server_url = "wss://open-tale.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://open-tale.herokuapp.com', 'http://open-tale.herokuapp.com']
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
