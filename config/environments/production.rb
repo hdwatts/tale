@@ -89,6 +89,7 @@ config.action_mailer.default_url_options = { :host => 'open-tale.herokuapp.com' 
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   #ACTION CABLE CONFIG
+  config.action_cable.url = "wss://open-tale.herokuapp.com/cable"
   config.web_socket_server_url = "wss://open-tale.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://open-tale.herokuapp.com', 'http://open-tale.herokuapp.com']
 
